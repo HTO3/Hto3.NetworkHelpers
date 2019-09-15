@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45;net46;net40</TargetFrameworks>
+    <Authors>HTO3</Authors>
+    <Description>Network extension methods.</Description>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseUrl>https://github.com/HTO3/Hto3.NetworkHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/HTO3/Hto3.NetworkHelpers</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/HTO3/Hto3.NetworkHelpers/master/nuget-logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/HTO3/Hto3.NetworkHelpers</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Collection manipulation helpers</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\Hto3.NetworkHelpers.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

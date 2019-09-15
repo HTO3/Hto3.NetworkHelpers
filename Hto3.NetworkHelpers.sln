@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hto3.NetworkHelpers", "Hto3.NetworkHelpers\Hto3.NetworkHelpers.csproj", "{3982489B-A139-4F23-B50B-60683C462E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hto3.NetworkHelpers.Test", "Hto3.NetworkHelpers.Test\Hto3.NetworkHelpers.Test.csproj", "{AF7A3F0B-433A-4240-BFFC-6B9A663C74B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58260CC8-EF32-41CE-9111-9AF562C2D0CE}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		nuget-logo.kra = nuget-logo.kra
+		nuget-logo.png = nuget-logo.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3982489B-A139-4F23-B50B-60683C462E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3982489B-A139-4F23-B50B-60683C462E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3982489B-A139-4F23-B50B-60683C462E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3982489B-A139-4F23-B50B-60683C462E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7A3F0B-433A-4240-BFFC-6B9A663C74B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7A3F0B-433A-4240-BFFC-6B9A663C74B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7A3F0B-433A-4240-BFFC-6B9A663C74B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7A3F0B-433A-4240-BFFC-6B9A663C74B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E4C5FA6-44EC-4EA6-AF15-82BE1D362931}
+	EndGlobalSection
+EndGlobal

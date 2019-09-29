@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace Hto3.NetworkHelpers.Test
 {
     [TestClass]
-    public class GetExternalIPAddressAsync
+    public class GetLocalIPv4AddressToReachInternet
     {
         [TestMethod]
         public void NormalUse()
         {
-            var myExternalIP = NetworkHelpers.GetExternalIPAddressAsync().Result;
-            Assert.IsNotNull(myExternalIP);
+            var ipAddress = NetworkHelpers.GetLocalIPv4AddressToReachInternet().Result;
+            Assert.IsNotNull(ipAddress);
         }
     }
 }

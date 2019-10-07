@@ -53,6 +53,9 @@
     <Compile Include="GetHostNameThroughIPAddressAsync.cs" />
     <Compile Include="GetLocalIPAddresses.cs" />
     <Compile Include="GetLocalIPv4AddressToReachInternet.cs" />
+    <Compile Include="IpAddressIsInPrivateAddressSpace.cs" />
+    <Compile Include="IpAddressIsInPublicAddressSpace.cs" />
+    <Compile Include="IpAddressIsInRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetIpv4SubnetFromNetMask.cs" />
     <Compile Include="ValidateCIDRIp.cs" />

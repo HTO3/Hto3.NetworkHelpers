@@ -9,10 +9,14 @@ namespace Hto3.NetworkHelpers.Test
         [TestMethod]
         public void NormalUse()
         {
+            //Prepare
+            const String EXPECTED_IP = "255.255.254.0";
 
-
+            //Act
             var result = NetworkHelpers.GetIpv4SubnetFromNetMask(23);
-            Assert.IsNotNull(result);
+
+            //Assert
+            Assert.AreEqual(EXPECTED_IP, result.ToString());
         }
     }
 }

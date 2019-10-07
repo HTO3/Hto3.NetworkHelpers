@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -14,6 +15,11 @@ namespace Hto3.NetworkHelpers
     /// </summary>
     public static class NetworkHelpers
     {
+        private const String CIDR_PRIVATE_ADDRESS_BLOCK_A = "10.0.0.0/8";
+
+        private const String CIDR_PRIVATE_ADDRESS_BLOCK_B = "172.16.0.0/12";
+
+        private const String CIDR_PRIVATE_ADDRESS_BLOCK_C = "192.168.0.0/16";
         /// <summary>
         /// Get all lan IPv4 addreesses of this machine.
         /// </summary>
@@ -59,15 +65,20 @@ namespace Hto3.NetworkHelpers
                 Task.Factory.StartNew(() =>
                 {
                     var client = new WebClient();
-                    var servicos = new[] { "http://ipinfo.io/ip", "http://ipecho.net/plain", "https://api.ipify.org/", "http://bot.whatismyipaddress.com/", "http://ipv4.icanhazip.com/" };
+                    var services = new[] { "https://api.ipify.org/", "http://ipinfo.io/ip" };
+                    
+                    // In case of emergency, try alternative services
+                    // http://ipecho.net/plain
+                    // http://bot.whatismyipaddress.com/
+                    // http://ipv4.icanhazip.com/
 
-                    foreach (var servico in servicos)
+                    foreach (var service in services)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
 
                         try
                         {
-                            var responseAsString = client.DownloadString(servico);
+                            var responseAsString = client.DownloadString(service);
                             var match = Regex.Match(responseAsString, @"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
 
                             if (!match.Success)
@@ -80,7 +91,7 @@ namespace Hto3.NetworkHelpers
                         }
                     }
 
-                    throw new InvalidOperationException("Não foi possível obter o endereço de IP externo. Verifique a sua conexão de internet.");
+                    throw new InvalidOperationException("Cannot locate your external IP address through https or http services (ports 443 or 80). Check your internet connection.");
                 }
                 ,
                 cancellationToken);
@@ -106,78 +117,6 @@ namespace Hto3.NetworkHelpers
                 },
                 cancellationToken);
         }
-
-        //    static Result<IPAddress> GetLocalIpAddressWithoutInternet(string localNetworkCidrIp)
-        //    {
-        //        var localIps = GetLocalIPv4AddressList();
-        //        if (localIps.Count == 1)
-        //        {
-        //            return Result.Ok(localIps[0]);
-        //        }
-
-        //        foreach (var ip in localIps)
-        //        {
-        //            var checkIp = ip.IsInRange(localNetworkCidrIp);
-        //            if (!checkIp.Success) continue;
-        //            if (!checkIp.Value) continue;
-
-        //            return Result.Ok(ip);
-        //        }
-
-        //        return Result.Fail<IPAddress>("Unable to determine local IP address");
-        //    }
-
-        //    static List<IPAddress> GetLocalIPv4AddressList()
-        //    {
-        //        var localIps = new List<IPAddress>();
-        //        foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
-        //        {
-        //            var ips =
-        //                nic.GetIPProperties().UnicastAddresses
-        //                    .Select(uni => uni.Address)
-        //                    .Where(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToList();
-
-        //            localIps.AddRange(ips);
-        //        }
-
-        //        return localIps;
-        //    }
-
-        //    public static Result<List<IPAddress>> ParseIPv4Addresses(string input)
-        //    {
-        //        const string ipV4Pattern =
-        //            @"(?:(?:1\d\d|2[0-5][0-5]|2[0-4]\d|0?[1-9]\d|0?0?\d)\.){3}(?:1\d\d|2[0-5][0-5]|2[0-4]\d|0?[1-9]\d|0?0?\d)";
-
-        //        if (string.IsNullOrEmpty(input))
-        //        {
-        //            return Result.Fail<List<IPAddress>>("Input string cannot be null");
-        //        }
-
-        //        var ips = new List<IPAddress>();
-        //        try
-        //        {
-        //            var regex = new Regex(ipV4Pattern);
-        //            foreach (Match match in regex.Matches(input))
-        //            {
-        //                var parse = ParseSingleIPv4Address(match.Value);
-        //                if (parse.Failure)
-        //                {
-        //                    return Result.Fail<List<IPAddress>>(parse.Error);
-        //                }
-
-        //                ips.Add(parse.Value);
-        //            }
-        //        }
-        //        catch (RegexMatchTimeoutException ex)
-        //        {
-        //            return Result.Fail<List<IPAddress>>($"{ex.Message} ({ex.GetType()}) raised in method IpAddressHelper.ParseIPv4Addresses");
-        //        }
-
-        //        return ips.Count > 0
-        //            ? Result.Ok(ips)
-        //            : Result.Fail<List<IPAddress>>("Input string did not contain any valid IPv4 addresses");
-        //    }
-
         /// <summary>
         /// Validate a CIDR Ip string (i.e "10.0.0.0/24")
         /// </summary>
@@ -262,301 +201,50 @@ namespace Hto3.NetworkHelpers
 
             return IPAddress.Parse(subNetMask);
         }
+        /// <summary>
+        /// Check if the provided Ip is in range of the CIDR Ip.
+        /// </summary>
+        /// <param name="checkIp"></param>
+        /// <param name="cidrIp"></param>
+        /// <returns></returns>
+        public static Boolean IpAddressIsInRange(IPAddress checkIp, String cidrIp)
+        {
+            if (!ValidateCIDRIp(cidrIp))
+                throw new ArgumentException($"cidrIp was not in the correct format:\nExpected: a.b.c.d/n\nActual: {cidrIp}", nameof(cidrIp));
 
-    //    // true if ipAddress falls inside the range defined by cidrIp, example:
-    //    // bool result = IsInCidrRange("192.168.2.3", "192.168.2.0/24"); // result = true
-    //    public static Result<bool> IpAddressIsInRange(string checkIp, string cidrIp)
-    //    {
-    //        if (string.IsNullOrEmpty(checkIp))
-    //        {
-    //            throw new ArgumentException("Input string must not be null", checkIp);
-    //        }
+            var parts = cidrIp.Split('/');
+            var cidrAddress = IPAddress.Parse(parts[0]);            
+            var netmaskBitCount = Int32.Parse(parts[1]);
+            var checkIpBytes = BitConverter.ToInt32(checkIp.GetAddressBytes(), 0);
+            var cidrIpBytes = BitConverter.ToInt32(cidrAddress.GetAddressBytes(), 0);
+            var cidrMaskBytes = IPAddress.HostToNetworkOrder(-1 << (32 - netmaskBitCount));
 
-    //        var parseIp = ParseIPv4Addresses(checkIp);
-    //        if (parseIp.Failure)
-    //        {
-    //            return Result.Fail<bool>($"Unable to parse IP address from input string {checkIp}");
-    //        }
+            var ipIsInRange = (checkIpBytes & cidrMaskBytes) == (cidrIpBytes & cidrMaskBytes);
 
-    //        return IpAddressIsInRange(parseIp.Value[0], cidrIp);
-    //    }
-
-    //    public static Result<bool> IpAddressIsInRange(IPAddress checkIp, string cidrIp)
-    //    {
-    //        var cidrIpNull = $"CIDR IP address was null or empty string, {cidrIp}";
-    //        var cidrIpParseError = $"Unable to parse IP address from input string {cidrIp}";
-    //        var cidrIpSplitError = $"cidrIp was not in the correct format:\nExpected: a.b.c.d/n\nActual: {cidrIp}";
-    //        var cidrMaskParseError1 = $"Unable to parse netmask bit count from {cidrIp}";
-    //        const string cidrMaskParseError2 = "Netmask bit count value is invalid, must be in range 0-32";
-
-    //        if (string.IsNullOrEmpty(cidrIp))
-    //        {
-    //            return Result.Fail<bool>(cidrIpNull);
-    //        }
-
-    //        var parseIp = ParseIPv4Addresses(cidrIp);
-    //        if (parseIp.Failure)
-    //        {
-    //            return Result.Fail<bool>(cidrIpParseError);
-    //        }
-
-    //        var cidrAddress = parseIp.Value[0];
-
-    //        var parts = cidrIp.Split('/');
-    //        if (parts.Length != 2)
-    //        {
-    //            return Result.Fail<bool>(cidrIpSplitError);
-    //        }
-
-    //        if (!Int32.TryParse(parts[1], out var netmaskBitCount))
-    //        {
-    //            return Result.Fail<bool>(cidrMaskParseError1);
-    //        }
-
-    //        if (0 > netmaskBitCount || netmaskBitCount > 32)
-    //        {
-    //            return Result.Fail<bool>(cidrMaskParseError2);
-    //        }
-
-    //        var checkIpBytes = BitConverter.ToInt32(checkIp.GetAddressBytes(), 0);
-    //        var cidrIpBytes = BitConverter.ToInt32(cidrAddress.GetAddressBytes(), 0);
-    //        var cidrMaskBytes = IPAddress.HostToNetworkOrder(-1 << (32 - netmaskBitCount));
-
-    //        var ipIsInRange = (checkIpBytes & cidrMaskBytes) == (cidrIpBytes & cidrMaskBytes);
-
-    //        return Result.Ok(ipIsInRange);
-    //    }
-
-    //    public static Result<bool> IpAddressIsInPrivateAddressSpace(string ipAddress)
-    //    {
-    //        var parseIp = ParseIPv4Addresses(ipAddress);
-    //        if (parseIp.Failure)
-    //        {
-    //            return Result.Fail<bool>($"Unable to parse IP address from {ipAddress}");
-    //        }
-
-    //        var ipIsInPrivateRange = IpAddressIsInPrivateAddressSpace(parseIp.Value[0]);
-
-    //        return Result.Ok(ipIsInPrivateRange);
-    //    }
-
-    //    public static bool IpAddressIsInPrivateAddressSpace(IPAddress ipAddress)
-    //    {
-    //        var inPrivateBlockA = IpAddressIsInRange(ipAddress, CidrPrivateAddressBlockA).Value;
-    //        var inPrivateBlockB = IpAddressIsInRange(ipAddress, CidrPrivateAddressBlockB).Value;
-    //        var inPrivateBlockC = IpAddressIsInRange(ipAddress, CidrPrivateAddressBlockC).Value;
-
-    //        return inPrivateBlockA || inPrivateBlockB || inPrivateBlockC;
-    //    }
-
-    //    public static AddressType GetAddressType(IPAddress ipAddress)
-    //    {
-    //        return IpAddressIsInPrivateAddressSpace(ipAddress)
-    //            ? AddressType.Private
-    //            : AddressType.Public;
-    //    }
-
-    //    public static Result<string> GetCidrIp()
-    //    {
-    //        var platform = Environment.OSVersion.Platform.ToString();
-
-    //        var ipAddressInfoList = platform.Contains("win", StringComparison.OrdinalIgnoreCase)
-    //            ? GetWindowsUnicastAddressInfoList()
-    //            : GetUnixUnicastAddressInfoList();
-
-    //        if (ipAddressInfoList.Count == 0)
-    //        {
-    //            const string error =
-    //                "No IPv4 addresses are assocaited with any network adapters " +
-    //                "on this machine, unable to determine CIDR IP";
-
-    //            return Result.Fail<string>(error);
-    //        }
-
-    //        if (ipAddressInfoList.Count > 1)
-    //        {
-    //            return Result.Fail<string>("More than one ethernet adapters found, unable to determine CIDR IP");
-    //        }
-
-    //        return platform.Contains("win", StringComparison.OrdinalIgnoreCase)
-    //            ? GetCidrIpFromWindowsIpAddressInformation(ipAddressInfoList[0])
-    //            : GetCidrIpFromUnixIpAddressInformation(ipAddressInfoList[0]);
-    //    }
-
-    //    static List<UnicastIPAddressInformation> GetUnixUnicastAddressInfoList()
-    //    {
-    //        var ethernetAdapters = NetworkInterface.GetAllNetworkInterfaces().Select(nic => nic)
-    //            .Where(nic => nic.Name.StartsWith("en", StringComparison.Ordinal)).ToList();
-
-    //        var ipV4List = new List<UnicastIPAddressInformation>();
-    //        foreach (var nic in ethernetAdapters)
-    //        {
-    //            var ips =
-    //                nic.GetIPProperties().UnicastAddresses
-    //                    .Select(ipInfo => ipInfo)
-    //                    .Where(ipInfo => ipInfo.Address.AddressFamily == AddressFamily.InterNetwork).ToList();
-
-    //            ipV4List.AddRange(ips);
-    //        }
-
-    //        return ipV4List;
-    //    }
-
-    //    static List<UnicastIPAddressInformation> GetWindowsUnicastAddressInfoList()
-    //    {
-    //        var ethernetAdapters = NetworkInterface.GetAllNetworkInterfaces().Select(nic => nic)
-    //            .Where(nic => nic.Name.Contains("ethernet", StringComparison.OrdinalIgnoreCase)
-    //                          || nic.Description.Contains("ethernet", StringComparison.OrdinalIgnoreCase)).ToList();
-
-    //        var ipV4List = new List<UnicastIPAddressInformation>();
-    //        foreach (var nic in ethernetAdapters)
-    //        {
-    //            var ips =
-    //                nic.GetIPProperties().UnicastAddresses
-    //                    .Select(ipInfo => ipInfo)
-    //                    .Where(ipInfo => ipInfo.Address.AddressFamily == AddressFamily.InterNetwork).ToList();
-
-    //            ipV4List.AddRange(ips);
-    //        }
-
-    //        return ipV4List;
-    //    }
-
-    //    static Result<string> GetCidrIpFromWindowsIpAddressInformation(UnicastIPAddressInformation ipInfo)
-    //    {
-    //        var ipAddress = ipInfo.Address;
-    //        var networkBitCount = ipInfo.PrefixLength;
-
-    //        return Result.Ok(GetCidrIpFromIpAddressAndNetworkBitCount(ipAddress, networkBitCount));
-    //    }
-
-    //    static Result<string> GetCidrIpFromUnixIpAddressInformation(UnicastIPAddressInformation ipInfo)
-    //    {
-    //        var getNetworkBitCount = GetNetworkBitCountFromSubnetMask(ipInfo.IPv4Mask);
-    //        if (getNetworkBitCount.Failure)
-    //        {
-    //            return Result.Fail<string>("Unable to determine CIDR IP from available network adapter information");
-    //        }
-
-    //        var networkBitCount = getNetworkBitCount.Value;
-
-    //        return Result.Ok(GetCidrIpFromIpAddressAndNetworkBitCount(ipInfo.Address, networkBitCount));
-    //    }
-
-    //    static Result<int> GetNetworkBitCountFromSubnetMask(IPAddress subnetMask)
-    //    {
-    //        var binaryArray = ConvertIpAddressToBinary(subnetMask, false).ToCharArray();
-
-    //        if (binaryArray.Length == 0 || binaryArray.Length != 32)
-    //        {
-    //            return Result.Fail<int>("Binary string was not in the expected format.");
-    //        }
-
-    //        if (binaryArray[0] != '1')
-    //        {
-    //            return Result.Fail<int>("Binary string was not in the expected format.");
-    //        }
-
-    //        var onesCount = 0;
-    //        var zerosCount = 0;
-    //        var firstZeroEncountered = false;
-
-    //        foreach (var bit in binaryArray)
-    //        {
-    //            if (!firstZeroEncountered)
-    //            {
-    //                if (bit == '1')
-    //                {
-    //                    onesCount++;
-    //                }
-
-    //                if (bit == '0')
-    //                {
-    //                    firstZeroEncountered = true;
-    //                    zerosCount++;
-    //                }
-    //            }
-    //            else
-    //            {
-    //                if (bit == '1')
-    //                {
-    //                    break;
-    //                }
-
-    //                if (bit == '0')
-    //                {
-    //                    zerosCount++;
-    //                }
-    //            }
-    //        }
-
-    //        var totalBits = onesCount + zerosCount;
-    //        if (totalBits != 32)
-    //        {
-    //            return Result.Fail<int>("Binary string was not in the expected format.");
-    //        }
-
-    //        return Result.Ok(onesCount);
-    //    }
-
-    //    static string GetCidrIpFromIpAddressAndNetworkBitCount(IPAddress address, int networkBitCount)
-    //    {
-    //        var ipAddressBytes = address.GetAddressBytes();
-    //        var networkIdBytes = new byte[4];
-
-    //        foreach (var i in Enumerable.Range(0, ipAddressBytes.Length))
-    //        {
-    //            var byteArray = Convert.ToString(ipAddressBytes[i], 2).PadLeft(8, '0').ToCharArray();
-    //            foreach (var j in Enumerable.Range(0, byteArray.Length))
-    //            {
-    //                var bitNumber = i * 8 + j + 1;
-    //                if (bitNumber > networkBitCount)
-    //                {
-    //                    byteArray[j] = '0';
-    //                }
-    //            }
-
-    //            var byteString = new string(byteArray);
-    //            networkIdBytes[i] = Convert.ToByte(byteString, 2);
-    //        }
-
-    //        var networkId = new IPAddress(networkIdBytes);
-    //        return $"{networkId}/{networkBitCount}";
-    //    }
-
-    //    public static Result<string> ConvertIpAddressToBinary(string ip, bool separateBytes)
-    //    {
-    //        var parseResult = ParseIPv4Addresses(ip);
-    //        if (parseResult.Failure)
-    //        {
-    //            return Result.Fail<string>(parseResult.Error);
-    //        }
-
-    //        var binary = ConvertIpAddressToBinary(parseResult.Value[0], separateBytes);
-
-    //        return Result.Ok(binary);
-    //    }
-
-    //    public static string ConvertIpAddressToBinary(IPAddress ip, bool separateBytes)
-    //    {
-    //        var bytes = ip.GetAddressBytes();
-    //        var s = string.Empty;
-
-    //        foreach (var i in Enumerable.Range(0, bytes.Length))
-    //        {
-    //            var oneByte = Convert.ToString(bytes[i], 2).PadLeft(8, '0');
-    //            s += oneByte;
-
-    //            if (!separateBytes) continue;
-
-    //            if (!i.IsLastIteration(bytes.Length))
-    //            {
-    //                s += " - ";
-    //            }
-    //        }
-
-    //        return s;
-    //    }
-
+            return ipIsInRange;
+        }
+        /// <summary>
+        /// Check if the provided Ip is in the private address space.
+        /// </summary>
+        /// <param name="ipAddress"></param>
+        /// <returns></returns>
+        public static Boolean IpAddressIsInPrivateAddressSpace(IPAddress ipAddress)
+        {
+            return
+                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_A)
+                ||
+                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_B)
+                ||
+                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_C);
+        }
+        /// <summary>
+        /// Check if the provided Ip is in the public address space.
+        /// </summary>
+        /// <param name="ipAddress"></param>
+        /// <returns></returns>
+        public static Boolean IpAddressIsInPublicAddressSpace(IPAddress ipAddress)
+        {
+            return !IpAddressIsInPrivateAddressSpace(ipAddress);
+        }
     }
 }

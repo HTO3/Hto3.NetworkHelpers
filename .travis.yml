@@ -1,13 +1,12 @@
 language: csharp
 mono: none
-dotnet: 5.0.103
+dotnet: 3.1.407
 jobs:
   include:
     - stage: build
       script:
         - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f netstandard2.1
         - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f netstandard2.0
-        - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f net5.0
     - stage: test
       script:
         - dotnet test -f netcoreapp3.1

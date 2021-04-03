@@ -1,23 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net40;net45;net46;net47;net48</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net40;net45;net46;net47;net48;net5.0</TargetFrameworks>
     <Authors>HTO3</Authors>
     <Description>Network helper methods.</Description>
     <Copyright>MIT</Copyright>
-    <PackageLicenseUrl>https://github.com/HTO3/Hto3.NetworkHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/HTO3/Hto3.NetworkHelpers</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/HTO3/Hto3.NetworkHelpers/master/nuget-logo.png</PackageIconUrl>
+    <PackageIconUrl></PackageIconUrl>
     <RepositoryUrl>https://github.com/HTO3/Hto3.NetworkHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Collection manipulation helpers</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <FileVersion>1.0.2.0</FileVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>nuget-logo.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Release\Hto3.NetworkHelpers.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\nuget-logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

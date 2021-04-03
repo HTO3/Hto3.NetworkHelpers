@@ -13,7 +13,7 @@ namespace Hto3.NetworkHelpers.Test
             const String VALID_CIDR_IP = "10.0.0.0/24";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(VALID_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(VALID_CIDR_IP);
 
             //Assert
             Assert.IsTrue(result);
@@ -26,7 +26,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "24";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -39,7 +39,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "    ";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -52,7 +52,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = null;
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -65,7 +65,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "192.168.1.1";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -78,7 +78,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "192.168.1.1/";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -91,7 +91,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "/";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);
@@ -104,7 +104,7 @@ namespace Hto3.NetworkHelpers.Test
             const String WRONG_CIDR_IP = "192.168.1.1/64";
 
             //Act
-            var result = NetworkHelpers.ValidateCIDRIp(WRONG_CIDR_IP);
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);

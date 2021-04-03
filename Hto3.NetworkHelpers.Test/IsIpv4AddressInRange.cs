@@ -9,29 +9,31 @@ using System.Threading.Tasks;
 namespace Hto3.NetworkHelpers.Test
 {
     [TestClass]
-    public class IpAddressIsInPrivateAddressSpace
+    public class IsIpv4AddressInRange
     {
         [TestMethod]
-        public void OnPrivateSpace()
+        public void OnRange()
         {
             //Prepare
-            IPAddress PRIVATE_IP_ADDRESS = IPAddress.Parse("192.168.1.1");
+            IPAddress IP = IPAddress.Parse("192.168.1.1");
+            String CIDR_IP = "192.168.0.0/16";
 
             //Act
-            var result = NetworkHelpers.IpAddressIsInPrivateAddressSpace(PRIVATE_IP_ADDRESS);
+            var result = NetworkHelpers.IsIpv4AddressInRange(IP, CIDR_IP);
 
             //Assert
             Assert.IsTrue(result);
         }
 
         [TestMethod]
-        public void OnPublicSpace()
+        public void NotOnRange()
         {
             //Prepare
-            IPAddress PUBLIC_IP_ADDRESS = IPAddress.Parse("200.87.14.111");
+            IPAddress IP = IPAddress.Parse("10.0.0.1");
+            String CIDR_IP = "192.168.0.0/24";
 
             //Act
-            var result = NetworkHelpers.IpAddressIsInPrivateAddressSpace(PUBLIC_IP_ADDRESS);
+            var result = NetworkHelpers.IsIpv4AddressInRange(IP, CIDR_IP);
 
             //Assert
             Assert.IsFalse(result);

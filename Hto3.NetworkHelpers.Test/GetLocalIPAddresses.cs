@@ -10,7 +10,7 @@ namespace Hto3.NetworkHelpers.Test
         [TestMethod]
         public void NormalUse()
         {
-            var ipAddresses = NetworkHelpers.GetLocalIPAddresses();
+            var ipAddresses = NetworkHelpers.GetLocalIPv4Addresses();
 
             Assert.IsNotNull(ipAddresses);
             Assert.IsTrue(ipAddresses.Any());

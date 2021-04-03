@@ -7,12 +7,13 @@ jobs:
       script:
         - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f netstandard2.1
         - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f netstandard2.0
+        - dotnet build Hto3.NetworkHelpers/Hto3.NetworkHelpers.csproj -f net5.0
     - stage: test
       script:
-        - dotnet test -f netcoreapp3.0
+        - dotnet test -f netcoreapp3.1
     - stage: upload-test-coverage
       script:
-        - dotnet test -f netcoreapp3.0 /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+        - dotnet test -f netcoreapp3.1 /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
         - curl -s https://codecov.io/bash > codecov
         - chmod +x codecov
         - ./codecov -f "Hto3.NetworkHelpers.Test/coverage.info" -t $CODECOV_UPLOAD_TOKEN

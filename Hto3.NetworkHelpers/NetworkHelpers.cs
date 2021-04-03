@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,16 +13,11 @@ namespace Hto3.NetworkHelpers
     /// </summary>
     public static class NetworkHelpers
     {
-        private const String CIDR_PRIVATE_ADDRESS_BLOCK_A = "10.0.0.0/8";
-
-        private const String CIDR_PRIVATE_ADDRESS_BLOCK_B = "172.16.0.0/12";
-
-        private const String CIDR_PRIVATE_ADDRESS_BLOCK_C = "192.168.0.0/16";
         /// <summary>
         /// Get all lan IPv4 addreesses of this machine.
         /// </summary>
         /// <returns>Coleção não materializada dos IPs da máquina</returns>
-        public static IEnumerable<IPAddress> GetLocalIPAddresses()
+        public static IEnumerable<IPAddress> GetLocalIPv4Addresses()
         {
             return
                 Dns.GetHostEntry(Dns.GetHostName()).AddressList
@@ -59,45 +52,43 @@ namespace Hto3.NetworkHelpers
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static Task<IPAddress> GetExternalIPv4AddressAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<IPAddress> GetExternalIPAddressAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return
                 Task.Factory.StartNew(() =>
                 {
-                    var client = new WebClient();
-                    var services = new[] { "https://api.ipify.org/", "http://ipinfo.io/ip" };
-                    
-                    // In case of emergency, try alternative services
-                    // http://ipecho.net/plain
-                    // http://bot.whatismyipaddress.com/
-                    // http://ipv4.icanhazip.com/
-
-                    foreach (var service in services)
+                    cancellationToken.ThrowIfCancellationRequested();                    
+                    using (var client = new WebClient())
                     {
-                        cancellationToken.ThrowIfCancellationRequested();
-
-                        try
-                        {
-                            var responseAsString = client.DownloadString(service);
-                            var match = Regex.Match(responseAsString, @"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
-
-                            if (!match.Success)
-                                continue;
-                            else
-                                return IPAddress.Parse(match.Value);
-                        }
-                        catch (Exception)
-                        {
-                        }
+                        var responseAsString = client.DownloadString("https://icanhazip.com/");//Alternative https://api.ipify.org/
+                        return IPAddress.Parse(responseAsString.Trim());
                     }
-
-                    throw new InvalidOperationException("Cannot locate your external IP address through https or http services (ports 443 or 80). Check your internet connection.");
                 }
                 ,
                 cancellationToken);
         }
         /// <summary>
-        /// Get the local ip address to reach the Internet.
+        /// Returns the reverse DNS record (PTR) for your external IP.
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static Task<String> GetExternalDNSRecordAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return
+                Task.Factory.StartNew(() =>
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    using (var client = new WebClient())
+                    {
+                        var responseAsString = client.DownloadString("http://icanhazptr.com/");
+                        return responseAsString.Trim();
+                    }                  
+                }
+                ,
+                cancellationToken);
+        }
+        /// <summary>
+        /// Get the local IP address to reach the Internet.
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
@@ -106,6 +97,7 @@ namespace Hto3.NetworkHelpers
             return
                 Task.Factory.StartNew(() =>
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
                     using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
                     {
                         socket.Connect("8.8.8.8", 65530);
@@ -122,7 +114,7 @@ namespace Hto3.NetworkHelpers
         /// </summary>
         /// <param name="cidrIp">An IP address with the format 0.0.0.0/0</param>
         /// <returns></returns>
-        public static Boolean ValidateCIDRIp(String cidrIp)
+        public static Boolean ValidateCIDRIP(String cidrIp)
         {
             if (String.IsNullOrWhiteSpace(cidrIp))
                 return false;
@@ -202,14 +194,14 @@ namespace Hto3.NetworkHelpers
             return IPAddress.Parse(subNetMask);
         }
         /// <summary>
-        /// Check if the provided Ip is in range of the CIDR Ip.
+        /// Check if the provided IPv4 is in range of the CIDR Ip.
         /// </summary>
         /// <param name="checkIp"></param>
         /// <param name="cidrIp"></param>
         /// <returns></returns>
-        public static Boolean IpAddressIsInRange(IPAddress checkIp, String cidrIp)
+        public static Boolean IsIpv4AddressInRange(IPAddress checkIp, String cidrIp)
         {
-            if (!ValidateCIDRIp(cidrIp))
+            if (!ValidateCIDRIP(cidrIp))
                 throw new ArgumentException($"cidrIp was not in the correct format:\nExpected: a.b.c.d/n\nActual: {cidrIp}", nameof(cidrIp));
 
             var parts = cidrIp.Split('/');
@@ -224,27 +216,31 @@ namespace Hto3.NetworkHelpers
             return ipIsInRange;
         }
         /// <summary>
-        /// Check if the provided Ip is in the private address space.
+        /// Check if the provided IPv4 is in the private address space.
         /// </summary>
         /// <param name="ipAddress"></param>
         /// <returns></returns>
-        public static Boolean IpAddressIsInPrivateAddressSpace(IPAddress ipAddress)
+        public static Boolean IsIpv4AddressInPrivateAddressSpace(IPAddress ipAddress)
         {
+            const String CIDR_PRIVATE_ADDRESS_BLOCK_A = "10.0.0.0/8";
+            const String CIDR_PRIVATE_ADDRESS_BLOCK_B = "172.16.0.0/12";
+            const String CIDR_PRIVATE_ADDRESS_BLOCK_C = "192.168.0.0/16";
+
             return
-                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_A)
+                IsIpv4AddressInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_A)
                 ||
-                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_B)
+                IsIpv4AddressInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_B)
                 ||
-                IpAddressIsInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_C);
+                IsIpv4AddressInRange(ipAddress, CIDR_PRIVATE_ADDRESS_BLOCK_C);
         }
         /// <summary>
-        /// Check if the provided Ip is in the public address space.
+        /// Check if the provided IPv4 is in the public address space.
         /// </summary>
         /// <param name="ipAddress"></param>
         /// <returns></returns>
-        public static Boolean IpAddressIsInPublicAddressSpace(IPAddress ipAddress)
+        public static Boolean IsIpv4AddressInPublicAddressSpace(IPAddress ipAddress)
         {
-            return !IpAddressIsInPrivateAddressSpace(ipAddress);
+            return !IsIpv4AddressInPrivateAddressSpace(ipAddress);
         }
     }
 }

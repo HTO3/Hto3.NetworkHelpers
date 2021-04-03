@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Hto3.NetworkHelpers.Test
 {
     [TestClass]
-    public class IpAddressIsInPublicAddressSpace
+    public class IsIpv4AddressInPublicAddressSpace
     {
         [TestMethod]
         public void OnPrivateSpace()
@@ -18,7 +18,7 @@ namespace Hto3.NetworkHelpers.Test
             IPAddress PRIVATE_IP_ADDRESS = IPAddress.Parse("192.168.1.1");
 
             //Act
-            var result = NetworkHelpers.IpAddressIsInPublicAddressSpace(PRIVATE_IP_ADDRESS);
+            var result = NetworkHelpers.IsIpv4AddressInPublicAddressSpace(PRIVATE_IP_ADDRESS);
 
             //Assert
             Assert.IsFalse(result);
@@ -31,7 +31,7 @@ namespace Hto3.NetworkHelpers.Test
             IPAddress PUBLIC_IP_ADDRESS = IPAddress.Parse("200.87.14.111");
 
             //Act
-            var result = NetworkHelpers.IpAddressIsInPublicAddressSpace(PUBLIC_IP_ADDRESS);
+            var result = NetworkHelpers.IsIpv4AddressInPublicAddressSpace(PUBLIC_IP_ADDRESS);
 
             //Assert
             Assert.IsTrue(result);

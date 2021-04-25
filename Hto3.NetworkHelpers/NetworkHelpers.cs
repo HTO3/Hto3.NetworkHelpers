@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -241,6 +244,41 @@ namespace Hto3.NetworkHelpers
         public static Boolean IsIpv4AddressInPublicAddressSpace(IPAddress ipAddress)
         {
             return !IsIpv4AddressInPrivateAddressSpace(ipAddress);
+        }
+        /// <summary>
+        /// Get the network interface vendor name by MAC address.
+        /// </summary>
+        /// <param name="macAddress">Hex formated MAC Address as 00-00-00-00-00-00 or 00:00:00:00:00:00.</param>
+        /// <returns></returns>
+        public static String GetNetworkInterfaceVendorNameByMACAddress(String macAddress)
+        {
+            if (String.IsNullOrWhiteSpace(macAddress))
+                throw new ArgumentNullException("The MAC address seems to be empty.");
+            if (macAddress.Length != 17)
+                throw new ArgumentException("The MAC address length must be 17 chars.");
+
+            var line = default(String);
+            var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Hto3.NetworkHelpers.Resources.oui.txt");
+            using (var streamReader = new StreamReader(resourceStream, Encoding.UTF8, false, 1024))
+            {
+                var oui = macAddress
+                    .Substring(0, 8)
+                    .ToUpper()
+                    .Replace(':', '-');
+
+                do
+                {
+                    line = streamReader.ReadLine();
+                }
+                while
+                (
+                    line != null
+                    &&
+                    !line.StartsWith(oui)
+                );
+            }
+            
+            return line?.Substring(line.IndexOf("\t\t") + 2);
         }
     }
 }

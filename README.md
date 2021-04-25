@@ -122,3 +122,12 @@ IPAddress PUBLIC_IP_ADDRESS = IPAddress.Parse("200.87.14.111");
 Boolean result = NetworkHelpers.IsIpv4AddressInPublicAddressSpace(PUBLIC_IP_ADDRESS);
 //result is true
 ```
+
+### GetNetworkInterfaceVendorNameByMACAddress
+
+Get the network interface vendor name by MAC address.
+
+```csharp
+String result = NetworkHelpers.GetNetworkInterfaceVendorNameByMACAddress("40-8D-5C-4D-EC-A6");
+//result is "GIGA-BYTE TECHNOLOGY CO.,LTD."
+```

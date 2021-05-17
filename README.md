@@ -3,9 +3,11 @@
 Hto3.NetworkHelpers
 ========================================
 
-|Nuget Package|Build|Test Coverage|
-|---|---|---|
-|[![Hto3.NetworkHelpers](https://img.shields.io/nuget/v/Hto3.NetworkHelpers.svg)](https://www.nuget.org/packages/Hto3.NetworkHelpers/)|[![Build Status](https://travis-ci.org/HTO3/Hto3.NetworkHelpers.svg?branch=master)](https://travis-ci.org/HTO3/Hto3.NetworkHelpers)|[![codecov](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers)|
+![License](https://img.shields.io/github/license/HTO3/Hto3.NetworkHelpers)
+[![Hto3.NetworkHelpers](https://img.shields.io/nuget/v/Hto3.NetworkHelpers.svg)](https://www.nuget.org/packages/Hto3.NetworkHelpers/)
+[![Downloads](https://img.shields.io/nuget/dt/Hto3.NetworkHelpers)](https://www.nuget.org/packages/Hto3.NetworkHelpers/)
+[![Build Status](https://travis-ci.org/HTO3/Hto3.NetworkHelpers.svg?branch=master)](https://travis-ci.org/HTO3/Hto3.NetworkHelpers)
+[![codecov](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers)
 
 Features
 --------

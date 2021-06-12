@@ -127,9 +127,22 @@ Boolean result = NetworkHelpers.IsIpv4AddressInPublicAddressSpace(PUBLIC_IP_ADDR
 
 ### GetNetworkInterfaceVendorNameByMACAddress
 
-Get the network interface vendor name by MAC address.
+Get the network interface vendor name by MAC address. Null if not found.
 
 ```csharp
 String result = NetworkHelpers.GetNetworkInterfaceVendorNameByMACAddress("40-8D-5C-4D-EC-A6");
 //result is "GIGA-BYTE TECHNOLOGY CO.,LTD."
+```
+
+### GetKnownPort
+
+Get information about a known port. Null if not found.
+
+```csharp
+var result = NetworkHelpers.GetKnownPort(1433, ProtocolType.Tcp);
+//result is
+// * ServiceName: "ms-sql-s."
+// * Port: 1433
+// * Protocol: ProtocolType.Tcp
+// * Description: "Microsoft-SQL-Server"
 ```

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hto3.NetworkHelpers.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -246,7 +247,7 @@ namespace Hto3.NetworkHelpers
             return !IsIpv4AddressInPrivateAddressSpace(ipAddress);
         }
         /// <summary>
-        /// Get the network interface vendor name by MAC address.
+        /// Get the network interface vendor name by MAC address. Null if not found.
         /// </summary>
         /// <param name="macAddress">Hex formated MAC Address as 00-00-00-00-00-00 or 00:00:00:00:00:00.</param>
         /// <returns></returns>
@@ -258,6 +259,7 @@ namespace Hto3.NetworkHelpers
                 throw new ArgumentException("The MAC address length must be 17 chars.");
 
             var line = default(String);
+            //http://standards-oui.ieee.org/oui/oui.txt
             var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Hto3.NetworkHelpers.Resources.oui.txt");
             using (var streamReader = new StreamReader(resourceStream, Encoding.UTF8, false, 1024))
             {
@@ -279,6 +281,54 @@ namespace Hto3.NetworkHelpers
             }
             
             return line?.Substring(line.IndexOf("\t\t") + 2);
+        }
+        /// <summary>
+        /// Get information about a known port. Null if not found.
+        /// </summary>
+        /// <param name="port">Port number.</param>
+        /// <param name="protocolType">Protocol type (TCP or UDP only!).</param>
+        /// <returns></returns>
+        public static KnownPort GetKnownPort(Int32 port, ProtocolType protocolType)
+        {
+            if (protocolType != ProtocolType.Tcp && protocolType != ProtocolType.Udp)
+                throw new ArgumentException("The protocol must be TCP OR UDP.");
+
+            var line = default(String);
+            //https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv
+            var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Hto3.NetworkHelpers.Resources.service-names-port-numbers.csv");
+            using (var streamReader = new StreamReader(resourceStream, Encoding.UTF8, false, 1024))
+            {
+                var portFormat = $",{port},";
+                var protFormat = $",{protocolType.ToString().ToLower()},";
+
+                do
+                {
+                    line = streamReader.ReadLine();
+                }
+                while
+                (
+                    line != null
+                    &&
+                    !(
+                        line.Contains(portFormat)
+                        &&
+                        line.Contains(protFormat)
+                    )
+                );
+            }
+
+            if (line == null)
+                return null;
+
+            var lineValues = line.Split(',');
+
+            if (lineValues.Length < 4)
+                return null;
+
+            if (lineValues[3] == "Unassigned")
+                return null;
+
+            return new KnownPort(lineValues[0], port, protocolType, lineValues[3]);
         }
     }
 }

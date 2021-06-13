@@ -38,5 +38,20 @@ namespace Hto3.NetworkHelpers.Test
             //Assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Invalid()
+        {
+            //Prepare
+            IPAddress IP = IPAddress.Parse("10.0.0.1");
+            String INVALID_CIDR_IP = "192.168.0.0/-1";
+
+            //Act
+            var result = NetworkHelpers.IsIpv4AddressInRange(IP, INVALID_CIDR_IP);
+
+            //Assert
+            Assert.Fail();
+        }
     }
 }

@@ -193,7 +193,7 @@ namespace Hto3.NetworkHelpers
                 subNetMask = $"{finalSubnet}.0.0.0";
             }
             else
-                throw new InvalidOperationException($"Invalid NetMask {netMask}, must be in range 0-32.");
+                throw new ArgumentOutOfRangeException(nameof(netMask), $"Invalid NetMask {netMask}, must be in range 0-32.");
 
             return IPAddress.Parse(subNetMask);
         }

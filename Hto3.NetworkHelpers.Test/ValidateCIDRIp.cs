@@ -109,5 +109,18 @@ namespace Hto3.NetworkHelpers.Test
             //Assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void Fail8()
+        {
+            //Prepare
+            const String WRONG_CIDR_IP = "192.168.1.1/-1";
+
+            //Act
+            var result = NetworkHelpers.ValidateCIDRIP(WRONG_CIDR_IP);
+
+            //Assert
+            Assert.IsFalse(result);
+        }
     }
 }

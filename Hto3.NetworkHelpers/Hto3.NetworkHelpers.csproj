@@ -10,7 +10,7 @@
     <PackageIconUrl></PackageIconUrl>
     <RepositoryUrl>https://github.com/HTO3/Hto3.NetworkHelpers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Collection manipulation helpers</PackageTags>
+    <PackageTags>network helpers ip</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.5</Version>

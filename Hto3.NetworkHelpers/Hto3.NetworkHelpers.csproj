@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net40;net45;net46;net47;net48;net5.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net461;net47;net48;net5.0;net6.0</TargetFrameworks>
     <Authors>HTO3</Authors>
     <Description>Network helper methods.</Description>
     <Copyright>MIT</Copyright>
@@ -13,14 +13,14 @@
     <PackageTags>Collection manipulation helpers</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.4</Version>
-    <FileVersion>1.0.4.0</FileVersion>
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <Version>1.0.5</Version>
+    <FileVersion>1.0.5.0</FileVersion>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>nuget-logo.png</PackageIcon>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DocumentationFile>bin\Release\Hto3.NetworkHelpers.xml</DocumentationFile>
   </PropertyGroup>
 

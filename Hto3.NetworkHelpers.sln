@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hto3.NetworkHelpers", "Hto3.NetworkHelpers\Hto3.NetworkHelpers.csproj", "{3982489B-A139-4F23-B50B-60683C462E18}"
 EndProject
@@ -11,12 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
 		LICENSE = LICENSE
+		nuget-logo-small.png = nuget-logo-small.png
 		nuget-logo.kra = nuget-logo.kra
 		nuget-logo.png = nuget-logo.png
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hto3.NetworkHelpers.Test", "Hto3.NetworkHelpers.Test\Hto3.NetworkHelpers.Test.csproj", "{E78907A6-C939-4C4D-B819-C2B9F2D23FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hto3.NetworkHelpers.Test", "Hto3.NetworkHelpers.Test\Hto3.NetworkHelpers.Test.csproj", "{E78907A6-C939-4C4D-B819-C2B9F2D23FBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

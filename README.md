@@ -1,4 +1,4 @@
-<img alt="logo" width="150" height="150" src="nuget-logo.png">
+![logo](https://raw.githubusercontent.com/HTO3/Hto3.NetworkHelpers/master/nuget-logo-small.png)
 
 Hto3.NetworkHelpers
 ========================================

@@ -8,6 +8,7 @@ Hto3.NetworkHelpers
 [![Downloads](https://img.shields.io/nuget/dt/Hto3.NetworkHelpers)](https://www.nuget.org/stats/packages/Hto3.NetworkHelpers?groupby=Version)
 [![Build Status](https://github.com/HTO3/Hto3.NetworkHelpers/actions/workflows/publish.yml/badge.svg)](https://github.com/HTO3/Hto3.NetworkHelpers/actions/workflows/publish.yml)
 [![codecov](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers/branch/master/graph/badge.svg)](https://codecov.io/gh/HTO3/Hto3.NetworkHelpers)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ca322993eab64fbfb57ec0725a29c0f4)](https://www.codacy.com/gh/HTO3/Hto3.NetworkHelpers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HTO3/Hto3.NetworkHelpers&amp;utm_campaign=Badge_Grade)
 
 Features
 --------

@@ -20,7 +20,7 @@ namespace Hto3.NetworkHelpers
         /// <summary>
         /// Get all lan IPv4 addreesses of this machine.
         /// </summary>
-        /// <returns>Coleção não materializada dos IPs da máquina</returns>
+        /// <returns>Collection of machine IPs not yet materialized</returns>
         public static IEnumerable<IPAddress> GetLocalIPv4Addresses()
         {
             return
@@ -211,8 +211,8 @@ namespace Hto3.NetworkHelpers
         /// <summary>
         /// Check if the provided IPv4 is in range of the CIDR Ip.
         /// </summary>
-        /// <param name="checkIp"></param>
-        /// <param name="cidrIp"></param>
+        /// <param name="checkIp">IP address to check.</param>
+        /// <param name="cidrIp">The cidr ip in the format "a.b.c.d/n".</param>
         /// <returns></returns>
         public static Boolean IsIpv4AddressInRange(IPAddress checkIp, String cidrIp)
         {
@@ -233,7 +233,7 @@ namespace Hto3.NetworkHelpers
         /// <summary>
         /// Check if the provided IPv4 is in the private address space.
         /// </summary>
-        /// <param name="ipAddress"></param>
+        /// <param name="ipAddress">The ip address to check.</param>
         /// <returns></returns>
         public static Boolean IsIpv4AddressInPrivateAddressSpace(IPAddress ipAddress)
         {

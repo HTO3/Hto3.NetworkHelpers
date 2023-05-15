@@ -76,20 +76,31 @@ namespace Hto3.NetworkHelpers
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static Task<String> GetExternalDNSRecordAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<String> GetExternalDNSRecordAsync(IPAddress ip = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return
-                Task.Factory.StartNew(() =>
+            if (ip == null)
+                ip = await GetExternalIPAddressAsync(cancellationToken);
+
+            return await Task.Factory.StartNew(() =>
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                using (var client = new WebClient())
                 {
-                    cancellationToken.ThrowIfCancellationRequested();
-                    using (var client = new WebClient())
-                    {
-                        var responseAsString = client.DownloadString("http://icanhazptr.com/");
-                        return responseAsString.Trim();
-                    }                  
-                }
-                ,
-                cancellationToken);
+                    var reversedIp = ReverseIpv4Address(ip);
+                    var responseAsString = client.DownloadString($"https://dns.google/resolve?name={reversedIp}.in-addr.arpa&type=PTR");
+
+                    var start = responseAsString.IndexOf("\"data\":\"") + 8;
+                    var end = responseAsString.IndexOf('"', start);
+
+                    var dnsRecord = responseAsString.Substring(start, end - start).TrimEnd('.');
+                    if (dnsRecord.Contains(' '))
+                        dnsRecord = dnsRecord.Split(' ')[0].TrimEnd('.');
+
+                    return responseAsString;
+                }                  
+            }
+            ,
+            cancellationToken);
         }
         /// <summary>
         /// Get the local IP address to reach the Internet.
@@ -259,7 +270,7 @@ namespace Hto3.NetworkHelpers
                 throw new ArgumentException("The MAC address length must be 17 chars.");
 
             var line = default(String);
-            //http://standards-oui.ieee.org/oui/oui.txt
+            //https://standards-oui.ieee.org/oui/oui.txt
             var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Hto3.NetworkHelpers.Resources.oui.txt");
             using (var streamReader = new StreamReader(resourceStream, Encoding.UTF8, false, 1024))
             {
@@ -281,6 +292,20 @@ namespace Hto3.NetworkHelpers
             }
             
             return line?.Substring(line.IndexOf("\t\t") + 2);
+        }
+        /// <summary>
+        /// Reverse an IPv4 address, useful to create a PTR record.
+        /// </summary>
+        /// <param name="ip">The ip address.</param>
+        /// <returns></returns>
+        public static IPAddress ReverseIpv4Address(IPAddress ip)
+        {
+            if (ip == null)
+                throw new ArgumentNullException(nameof(ip));
+
+            var parts = ip.ToString().Split('.');
+
+            return IPAddress.Parse($"{parts[3]}.{parts[2]}.{parts[1]}.{parts[0]}");
         }
         /// <summary>
         /// Get information about a known port. Null if not found.

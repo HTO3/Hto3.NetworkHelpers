@@ -19,7 +19,7 @@ echo,7,udp,Echo,[Jon_Postel],[Jon_Postel],,,,,,
 ,8,udp,Unassigned,,,,,,,,
 discard,9,tcp,Discard,[Jon_Postel],[Jon_Postel],,,,,,
 discard,9,udp,Discard,[Jon_Postel],[Jon_Postel],,,,,,
-discard,9,sctp,Discard,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,
+discard,9,sctp,Discard,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,
 discard,9,dccp,Discard,[Eddie_Kohler],[Eddie_Kohler],,,[RFC4340],1145656131,,
 ,10,tcp,Unassigned,,,,,,,,
 ,10,udp,Unassigned,,,,,,,,
@@ -43,13 +43,13 @@ chargen,19,tcp,Character Generator,,,,,,,,
 chargen,19,udp,Character Generator,,,,,,,,
 ftp-data,20,tcp,File Transfer [Default Data],[Jon_Postel],[Jon_Postel],,,,,,
 ftp-data,20,udp,File Transfer [Default Data],[Jon_Postel],[Jon_Postel],,,,,,
-ftp-data,20,sctp,FTP,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,
+ftp-data,20,sctp,FTP,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,
 ftp,21,tcp,File Transfer Protocol [Control],[Jon_Postel],[Jon_Postel],,,[RFC959],,,Defined TXT keys: u=<username> p=<password> path=<path>
 ftp,21,udp,File Transfer Protocol [Control],[Jon_Postel],[Jon_Postel],,,[RFC959],,,Defined TXT keys: u=<username> p=<password> path=<path>
-ftp,21,sctp,FTP,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,Defined TXT keys: u=<username> p=<password> path=<path>
+ftp,21,sctp,FTP,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,Defined TXT keys: u=<username> p=<password> path=<path>
 ssh,22,tcp,The Secure Shell (SSH) Protocol,,,,,[RFC4251],,,Defined TXT keys: u=<username> p=<password>
 ssh,22,udp,The Secure Shell (SSH) Protocol,,,,,[RFC4251],,,Defined TXT keys: u=<username> p=<password>
-ssh,22,sctp,SSH,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,Defined TXT keys: u=<username> p=<password>
+ssh,22,sctp,SSH,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,Defined TXT keys: u=<username> p=<password>
 telnet,23,tcp,Telnet,[Jon_Postel],[Jon_Postel],,,[RFC854],,,Defined TXT keys: u=<username> p=<password>
 telnet,23,udp,Telnet,[Jon_Postel],[Jon_Postel],,,[RFC854],,,Defined TXT keys: u=<username> p=<password>
 ,24,tcp,any private mail system,[Rick_Adams],[Rick_Adams],,,,,,
@@ -177,10 +177,10 @@ vettcp,78,tcp,vettcp,[Christopher_Leong],[Christopher_Leong],,,,,,
 vettcp,78,udp,vettcp,[Christopher_Leong],[Christopher_Leong],,,,,,
 finger,79,tcp,Finger,[David_Zimmerman],[David_Zimmerman],,,,,Unauthorized use by some mail users (see [RFC4146] for details),
 finger,79,udp,Finger,[David_Zimmerman],[David_Zimmerman],,,,,Unauthorized use by some mail users (see [RFC4146] for details),
-http,80,tcp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
-http,80,udp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
-www,80,tcp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,"This is a duplicate of the ""http"" service and should not be used for discovery purposes."
-www,80,udp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,"This is a duplicate of the ""http"" service and should not be used for discovery purposes."
+http,80,tcp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
+http,80,udp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
+www,80,tcp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,"This is a duplicate of the ""http"" service and should not be used for discovery purposes."
+www,80,udp,World Wide Web HTTP,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,"This is a duplicate of the ""http"" service and should not be used for discovery purposes."
 www-http,80,tcp,World Wide Web HTTP,[Tim_Berners_Lee],[Tim_Berners_Lee],,,,,,"This is a duplicate of the ""http"" service and should not be used for discovery purposes.
       u=<username> p=<password> path=<path to document>
         (see txtrecords.html#http)
@@ -223,7 +223,7 @@ www-http,80,udp,World Wide Web HTTP,[Tim_Berners_Lee],[Tim_Berners_Lee],,,,,,"Th
       Such types should be advertised as their own logical service type with their
       own DNS-SD service type, for example, XUL (XML User Interface Language)
       transported over HTTP is advertised explicitly as DNS-SD service type ""xul-http""."
-http,80,sctp,HTTP,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
+http,80,sctp,HTTP,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,Defined TXT keys: u=<username> p=<password> path=<path to document>
 ,81,,Unassigned,,,,2007-09-06,,,,
 xfer,82,tcp,XFER Utility,[Thomas_M_Smith],[Thomas_M_Smith],,,,,,
 xfer,82,udp,XFER Utility,[Thomas_M_Smith],[Thomas_M_Smith],,,,,,
@@ -237,8 +237,8 @@ mfcobol,86,tcp,Micro Focus Cobol,[Simon_Edwards],[Simon_Edwards],,,,,,
 mfcobol,86,udp,Micro Focus Cobol,[Simon_Edwards],[Simon_Edwards],,,,,,
 ,87,tcp,any private terminal link,[Jon_Postel],[Jon_Postel],,,,,,
 ,87,udp,any private terminal link,[Jon_Postel],[Jon_Postel],,,,,,
-kerberos,88,tcp,Kerberos,[B_Clifford_Neuman],[B_Clifford_Neuman],,,,,,
-kerberos,88,udp,Kerberos,[B_Clifford_Neuman],[B_Clifford_Neuman],,,,,,
+kerberos,88,tcp,Kerberos,[B_Clifford_Neuman],[B_Clifford_Neuman],,2022-02-18,[RFC4120],,,
+kerberos,88,udp,Kerberos,[B_Clifford_Neuman],[B_Clifford_Neuman],,2022-02-18,[RFC4120],,,
 su-mit-tg,89,tcp,SU/MIT Telnet Gateway,[Mark_Crispin],[Mark_Crispin],,,,,,
 su-mit-tg,89,udp,SU/MIT Telnet Gateway,[Mark_Crispin],[Mark_Crispin],,,,,,
 dnsix,90,tcp,DNSIX Securit Attribute Token Map,[Charles_Watt],[Charles_Watt],,,,,PORT 90 also being used unofficially by Pointcast,
@@ -436,7 +436,7 @@ nextstep,178,tcp,NextStep Window Server,[Leo_Hourvitz],[Leo_Hourvitz],,,,,,
 nextstep,178,udp,NextStep Window Server,[Leo_Hourvitz],[Leo_Hourvitz],,,,,,
 bgp,179,tcp,Border Gateway Protocol,[Kirk_Lougheed],[Kirk_Lougheed],,,,,,
 bgp,179,udp,Border Gateway Protocol,[Kirk_Lougheed],[Kirk_Lougheed],,,,,,
-bgp,179,sctp,BGP,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,
+bgp,179,sctp,BGP,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,
 ris,180,tcp,Intergraph,[Dave_Buehmann],[Dave_Buehmann],,,,,,
 ris,180,udp,Intergraph,[Dave_Buehmann],[Dave_Buehmann],,,,,,
 unify,181,tcp,Unify,[Daegis_Inc],[Chris_Anderson],,2012-07-31,,,,
@@ -877,9 +877,9 @@ cvc-hostd,442,udp,"cvc_hostd IANA assigned this well-formed service name as a re
 cvc_hostd,442,udp,cvc_hostd,[Bill_Davidson],[Bill_Davidson],,,,,,"This entry is an alias to ""cvc-hostd"".
 This entry is now historic, not usable for use with many
 common service discovery mechanisms."
-https,443,tcp,http protocol over TLS/SSL,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,
-https,443,udp,http protocol over TLS/SSL,[IESG],[IETF_Chair],,2021-10-01,[RFC-ietf-httpbis-semantics-19],,,
-https,443,sctp,HTTPS,[Randall_Stewart],[Randall_Stewart],,,[RFC4960],,,
+https,443,tcp,http protocol over TLS/SSL,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,
+https,443,udp,http protocol over TLS/SSL,[IESG],[IETF_Chair],,2021-10-01,[RFC9110],,,
+https,443,sctp,HTTPS,[Randall_Stewart],[Randall_Stewart],,2022-02-07,[RFC9260],,,
 snpp,444,tcp,Simple Network Paging Protocol,,,,,[RFC1568],,,
 snpp,444,udp,Simple Network Paging Protocol,,,,,[RFC1568],,,
 microsoft-ds,445,tcp,Microsoft-DS,[Pradeep_Bahl],[Pradeep_Bahl],,,,,,
@@ -1048,10 +1048,10 @@ timed,525,tcp,timeserver,,,,,,,,
 timed,525,udp,timeserver,,,,,,,,
 tempo,526,tcp,newdate,,,,,,,,
 tempo,526,udp,newdate,,,,,,,,
-stx,527,tcp,Stock IXChange,[Fraxion_Software],[Ferdi_Ladeira],,2012-03-21,,,,
-stx,527,udp,Stock IXChange,[Fraxion_Software],[Ferdi_Ladeira],,2012-03-21,,,,
-custix,528,tcp,Customer IXChange,[Fraxion_Software],[Ferdi_Ladeira],,2012-03-21,,,,
-custix,528,udp,Customer IXChange,[Fraxion_Software],[Ferdi_Ladeira],,2012-03-21,,,,
+stx,527,tcp,Stock IXChange,[Ferdi_Ladeira],[Ferdi_Ladeira],,2022-01-25,,,,
+stx,527,udp,Stock IXChange,[Ferdi_Ladeira],[Ferdi_Ladeira],,2022-01-25,,,,
+custix,528,tcp,Customer IXChange,[Ferdi_Ladeira],[Ferdi_Ladeira],,2022-01-25,,,,
+custix,528,udp,Customer IXChange,[Ferdi_Ladeira],[Ferdi_Ladeira],,2022-01-25,,,,
 irc-serv,529,tcp,IRC-SERV,[Brian_Tackett],[Brian_Tackett],,,,,,
 irc-serv,529,udp,IRC-SERV,[Brian_Tackett],[Brian_Tackett],,,,,,
 courier,530,tcp,rpc,,,,,,,,
@@ -1551,8 +1551,8 @@ dhcp-failover2,847,udp,dhcp-failover 2,[Bernard_Volz],[Bernard_Volz],,,,,,
 gdoi,848,tcp,GDOI,,,,,[RFC3547],,,
 gdoi,848,udp,GDOI,,,,,[RFC3547],,,
 ,849-852,,Unassigned,,,,,,,,
-domain-s,853,tcp,DNS query-response protocol run over TLS/DTLS,[IESG],[IETF_Chair],2015-10-08,2017-01-23,[RFC7858][RFC8094],,,
-domain-s,853,udp,DNS query-response protocol run over TLS/DTLS,[IESG],[IETF_Chair],2015-10-08,2017-01-23,[RFC7858][RFC8094],,,
+domain-s,853,tcp,DNS query-response protocol run over TLS,[IESG],[IETF_Chair],2015-10-08,2022-04-11,[RFC7858],,,
+domain-s,853,udp,DNS query-response protocol run over DTLS or QUIC,[IESG],[IETF_Chair],2015-10-08,2022-04-01,[RFC7858][RFC8094][RFC9250],,,
 dlep,854,tcp,Dynamic Link Exchange Protocol (DLEP),[IESG],[IETF_Chair],2017-04-03,,[RFC8175],,,
 dlep,854,udp,Dynamic Link Exchange Protocol (DLEP),[IESG],[IETF_Chair],2017-04-03,,[RFC8175],,,
 ,855-859,,Unassigned,,,,,,,,
@@ -1597,7 +1597,11 @@ apex-mesh,912,tcp,APEX relay-relay service,,,,,,,,
 apex-mesh,912,udp,APEX relay-relay service,,,,,,,,
 apex-edge,913,tcp,APEX endpoint-relay service,,,,,[RFC3340],,,
 apex-edge,913,udp,APEX endpoint-relay service,,,,,[RFC3340],,,
-,914-952,,Unassigned,,,,,,,,
+,914,tcp,Reserved,,,,,,,,
+rift-lies,914,udp,"Routing in Fat Trees Link Information Elements (TEMPORARY - registered 2023-02-17, expires 2024-02-17)",[RIFT_WG],[Jordan_Head][Tony_Przygienda],2023-02-17,,[draft-ietf-rift-rift-16],,,
+,915,tcp,Reserved,,,,,,,,
+rift-ties,915,udp,"Routing in Fat Trees Topology Information Elements (TEMPORARY - registered 2023-02-17, expires 2024-02-17)",[RIFT_WG],[Jordan_Head][Tony_Przygienda],2023-02-17,,[draft-ietf-rift-rift-16],,,
+,916-952,,Unassigned,,,,,,,,
 rndc,953,tcp,BIND9 remote name daemon controller,[Internet_Systems_Consortium_Inc],[Ray_Bellis],2017-06-08,,,,,
 ,953,udp,Reserved,,,,,,,,
 ,954-988,,Unassigned,,,,,,,,
@@ -2707,8 +2711,8 @@ vpvc,1519,tcp,Virtual Places Video control,[Avshalom_Houri],[Avshalom_Houri],,,,
 vpvc,1519,udp,Virtual Places Video control,[Avshalom_Houri],[Avshalom_Houri],,,,,,
 atm-zip-office,1520,tcp,atm zip office,[Wilson_Kwan],[Wilson_Kwan],,,,,,
 atm-zip-office,1520,udp,atm zip office,[Wilson_Kwan],[Wilson_Kwan],,,,,,
-ncube-lm,1521,tcp,nCube License Manager,[Maxine_Yuen],[Maxine_Yuen],,,,,,
-ncube-lm,1521,udp,nCube License Manager,[Maxine_Yuen],[Maxine_Yuen],,,,,,
+ncube-lm,1521,tcp,nCube License Manager,[Maxine_Yuen],[Maxine_Yuen],,2022-02-14,,,Unauthorized Use Known on port 1521,
+ncube-lm,1521,udp,nCube License Manager,[Maxine_Yuen],[Maxine_Yuen],,2022-02-14,,,Unauthorized Use Known on port 1521,
 ricardo-lm,1522,tcp,Ricardo North America License Manager,[Mike_Flemming],[Mike_Flemming],,,,,,
 ricardo-lm,1522,udp,Ricardo North America License Manager,[Mike_Flemming],[Mike_Flemming],,,,,,
 cichild-lm,1523,tcp,cichild,[Andy_Burgess],[Andy_Burgess],,,,,,
@@ -4225,7 +4229,8 @@ simple-tx-rx,2257,tcp,simple text/file transfer,[Daniel_Kilsdonk],[Daniel_Kilsdo
 simple-tx-rx,2257,udp,simple text/file transfer,[Daniel_Kilsdonk],[Daniel_Kilsdonk],2006-08,,,,,
 rcts,2258,tcp,Rotorcraft Communications Test System,[Terry_Eldridge],[Terry_Eldridge],2006-08,,,,,
 rcts,2258,udp,Rotorcraft Communications Test System,[Terry_Eldridge],[Terry_Eldridge],2006-08,,,,,
-,2259,,Unassigned,,,,2011-06-28,,,,
+bid-serv,2259,tcp,BIF identifiers resolution service,[Li_Zhiping],[Zhang_Bo],2023-03-06,,,,,
+bid-serv,2259,udp,BIF identifiers resolution service,[Li_Zhiping],[Zhang_Bo],2023-03-06,,,,,
 apc-2260,2260,tcp,APC 2260,[American_Power_Conve],[American_Power_Conve],2002-02,,,,,
 apc-2260,2260,udp,APC 2260,[American_Power_Conve],[American_Power_Conve],2002-02,,,,,
 comotionmaster,2261,tcp,CoMotion Master Server,,,,,,,,
@@ -4706,8 +4711,8 @@ ssm-cssps,2478,tcp,SecurSight Authentication Server (SSL),,,,,,,,
 ssm-cssps,2478,udp,SecurSight Authentication Server (SSL),,,,,,,,
 ssm-els,2479,tcp,SecurSight Event Logging Server (SSL),[John_Linn],[John_Linn],,,,,,
 ssm-els,2479,udp,SecurSight Event Logging Server (SSL),[John_Linn],[John_Linn],,,,,,
-powerexchange,2480,tcp,Informatica PowerExchange Listener,[Dale_Norman],[Dale_Norman],,,,,,
-powerexchange,2480,udp,Informatica PowerExchange Listener,[Dale_Norman],[Dale_Norman],,,,,,
+powerexchange,2480,tcp,Informatica PowerExchange Listener,[Informatica],[Philip_Line],,2023-03-13,,,,
+powerexchange,2480,udp,Informatica PowerExchange Listener,[Informatica],[Philip_Line],,2023-03-13,,,,
 giop,2481,tcp,Oracle GIOP,,,,,,,,
 giop,2481,udp,Oracle GIOP,,,,,,,,
 giop-ssl,2482,tcp,Oracle GIOP SSL,,,,,,,,
@@ -5028,8 +5033,8 @@ solve,2636,tcp,Solve,[Peter_Morrison],[Peter_Morrison],,,,,,
 solve,2636,udp,Solve,[Peter_Morrison],[Peter_Morrison],,,,,,
 imdocsvc,2637,tcp,Import Document Service,[Zia_Bhatti],[Zia_Bhatti],,,,,,
 imdocsvc,2637,udp,Import Document Service,[Zia_Bhatti],[Zia_Bhatti],,,,,,
-sybaseanywhere,2638,tcp,Sybase Anywhere,[Dave_Neudoerffer],[Dave_Neudoerffer],,,,,,
-sybaseanywhere,2638,udp,Sybase Anywhere,[Dave_Neudoerffer],[Dave_Neudoerffer],,,,,,
+sybaseanywhere,2638,tcp,Sybase Anywhere,[SAP],[Jason_Noack],,2021-12-03,,,,
+sybaseanywhere,2638,udp,Sybase Anywhere,[SAP],[Jason_Noack],,2021-12-03,,,,
 aminet,2639,tcp,AMInet,[Alcorn_McBride_Inc],[Alcorn_McBride_Inc],,,,,,
 aminet,2639,udp,AMInet,[Alcorn_McBride_Inc],[Alcorn_McBride_Inc],,,,,,
 ami-control,2640,tcp,Alcorn McBride Inc protocol used for device control,[Alcorn_McBride_Inc],[Alcorn_McBride_Inc],,2020-03-12,,,,
@@ -6277,8 +6282,8 @@ unite,3217,tcp,Unified IP & Telecom Environment,[Christer_Gunnarsson],[Christer_
 unite,3217,udp,Unified IP & Telecom Environment,[Christer_Gunnarsson],[Christer_Gunnarsson],2009-03-26,,,,,
 smartpackets,3218,tcp,EMC SmartPackets,[Steve_Spataro],[Steve_Spataro],,,,,,
 smartpackets,3218,udp,EMC SmartPackets,[Steve_Spataro],[Steve_Spataro],,,,,,
-wms-messenger,3219,tcp,WMS Messenger,[Michael_Monasterio],[Michael_Monasterio],,,,,,
-wms-messenger,3219,udp,WMS Messenger,[Michael_Monasterio],[Michael_Monasterio],,,,,,
+wms-messenger,3219,tcp,WMS Messenger,[WM_Software_Inc.],[WM_Software_Inc.],,2022-07-18,,,,
+wms-messenger,3219,udp,WMS Messenger,[WM_Software_Inc.],[WM_Software_Inc.],,2022-07-18,,,,
 xnm-ssl,3220,tcp,XML NM over SSL,,,,,,,,
 xnm-ssl,3220,udp,XML NM over SSL,,,,,,,,
 xnm-clear-text,3221,tcp,XML NM over TCP,[Mark_Trostler],[Mark_Trostler],,,,,,
@@ -6439,9 +6444,10 @@ deskview,3298,tcp,DeskView,[Manfred_Randelzofer],[Manfred_Randelzofer],,,,,,
 deskview,3298,udp,DeskView,[Manfred_Randelzofer],[Manfred_Randelzofer],,,,,,
 pdrncs,3299,tcp,pdrncs,[Paul_Wissenbach],[Paul_Wissenbach],,,,,,
 pdrncs,3299,udp,pdrncs,[Paul_Wissenbach],[Paul_Wissenbach],,,,,,
-ceph,3300,tcp,Ceph monitor,[Sage_Weil],[Sage_Weil],2015-06-29,,,,Knwon Unauthorized Use on 3300-3301,
+ceph,3300,tcp,Ceph monitor,[Sage_Weil],[Sage_Weil],2015-06-29,,,,Known Unauthorized Use on port 3300,
 ,3300,udp,Reserved,,,,,,,,
-,3301,,unassigned,,,,,,,Knwon Unauthorized Use on 3300-3301,
+tarantool,3301,tcp,Tarantool in-memory computing platform,[Tarantool],[Alexander_Turenko],2022-06-10,,,,Known Unauthorized Use on port 3301,
+tarantool,3301,udp,Tarantool in-memory computing platform,[Tarantool],[Alexander_Turenko],2022-06-10,,,,Known Unauthorized Use on port 3301,
 mcs-fastmail,3302,tcp,MCS Fastmail,[Patti_Jo_Newsom],[Patti_Jo_Newsom],,,,,,
 mcs-fastmail,3302,udp,MCS Fastmail,[Patti_Jo_Newsom],[Patti_Jo_Newsom],,,,,,
 opsession-clnt,3303,tcp,OP Session Client,,,,,,,,
@@ -6557,8 +6563,8 @@ kv-agent,3361,tcp,KV Agent,[Thomas_Soranno],[Thomas_Soranno],,,,,,
 kv-agent,3361,udp,KV Agent,[Thomas_Soranno],[Thomas_Soranno],,,,,,
 dj-ilm,3362,tcp,DJ ILM,[Don_Tyson],[Don_Tyson],,,,,,
 dj-ilm,3362,udp,DJ ILM,[Don_Tyson],[Don_Tyson],,,,,,
-nati-vi-server,3363,tcp,NATI Vi Server,[Robert_Dye],[Robert_Dye],,,,,,
-nati-vi-server,3363,udp,NATI Vi Server,[Robert_Dye],[Robert_Dye],,,,,,
+nati-vi-server,3363,tcp,NATI Vi Server,[National_Instruments_2],[Jeff_Peters],,,,,,
+nati-vi-server,3363,udp,NATI Vi Server,[National_Instruments_2],[Jeff_Peters],,,,,,
 creativeserver,3364,tcp,Creative Server,,,,,,,,
 creativeserver,3364,udp,Creative Server,,,,,,,,
 contentserver,3365,tcp,Content Server,,,,,,,,
@@ -6600,8 +6606,8 @@ backroomnet,3387,tcp,Back Room Net,[Clayton_Wilkinson],[Clayton_Wilkinson],,,,,,
 backroomnet,3387,udp,Back Room Net,[Clayton_Wilkinson],[Clayton_Wilkinson],,,,,,
 cbserver,3388,tcp,CB Server,[Allen_Wei],[Allen_Wei],,,,,,
 cbserver,3388,udp,CB Server,[Allen_Wei],[Allen_Wei],,,,,,
-ms-wbt-server,3389,tcp,MS WBT Server,[Ritu_Bahl],[Ritu_Bahl],,,,,,
-ms-wbt-server,3389,udp,MS WBT Server,[Ritu_Bahl],[Ritu_Bahl],,,,,,
+ms-wbt-server,3389,tcp,MS WBT Server,[Jordan_Marchese],[Jordan_Marchese],,2022-11-03,,,,
+ms-wbt-server,3389,udp,MS WBT Server,[Jordan_Marchese],[Jordan_Marchese],,,,,,
 dsc,3390,tcp,Distributed Service Coordinator,[Charles_Honton],[Charles_Honton],,,,,,
 dsc,3390,udp,Distributed Service Coordinator,[Charles_Honton],[Charles_Honton],,,,,,
 savant,3391,tcp,SAVANT,[Andy_Bruce],[Andy_Bruce],,,,,,
@@ -6816,7 +6822,7 @@ swr-port,3491,tcp,SWR Port,[Ian_Manning],[Ian_Manning],2002-05,,,,,
 swr-port,3491,udp,SWR Port,[Ian_Manning],[Ian_Manning],2002-05,,,,,
 tvdumtray-port,3492,tcp,TVDUM Tray Port,[Peter_Boers],[Peter_Boers],2002-05,,,,,
 tvdumtray-port,3492,udp,TVDUM Tray Port,[Peter_Boers],[Peter_Boers],2002-05,,,,,
-nut,3493,tcp,Network UPS Tools,[Network_UPS_Tools_Project],[Evgeny_Klimov],2002-05,2020-12-16,,,,
+nut,3493,tcp,Network UPS Tools,[Network_UPS_Tools_Project],[Evgeny_Klimov],2002-05,2022-05-18,[RFC9271],,,
 nut,3493,udp,Network UPS Tools,[Network_UPS_Tools_Project],[Evgeny_Klimov],2002-05,2020-12-16,,,,
 ibm3494,3494,tcp,IBM 3494,[Jeffrey_Pilch],[Jeffrey_Pilch],,,,,,
 ibm3494,3494,udp,IBM 3494,[Jeffrey_Pilch],[Jeffrey_Pilch],,,,,,
@@ -7798,8 +7804,8 @@ iconp,3972,tcp,ict-control Protocol,[Roel_Harbers],[Roel_Harbers],2005-08,,,,,
 iconp,3972,udp,ict-control Protocol,[Roel_Harbers],[Roel_Harbers],2005-08,,,,,
 progistics,3973,tcp,ConnectShip Progistics,[ConnectShip_Inc],[Robert_Kinyon],2005-08,2019-12-12,,,,
 progistics,3973,udp,ConnectShip Progistics,[ConnectShip_Inc],[Robert_Kinyon],2005-08,2019-12-12,,,,
-citysearch,3974,tcp,Remote Applicant Tracking Service,[Marc_Castelluccio],[Marc_Castelluccio],2005-08,,,,,
-citysearch,3974,udp,Remote Applicant Tracking Service,[Marc_Castelluccio],[Marc_Castelluccio],2005-08,,,,,
+xk22,3974,tcp,Remote Applicant Tracking Service,[Marc_Castelluccio],[Marc_Castelluccio],2005-08,2022-09-09,,,,
+xk22,3974,udp,Remote Applicant Tracking Service,[Marc_Castelluccio],[Marc_Castelluccio],2005-08,2022-09-09,,,,
 airshot,3975,tcp,Air Shot,[Shingo_Kimura],[Shingo_Kimura],2005-08,,,,,
 airshot,3975,udp,Air Shot,[Shingo_Kimura],[Shingo_Kimura],2005-08,,,,,
 opswagent,3976,tcp,Server Automation Agent,[Hewlett_Packard_Enterprise],[Cristi_Fati],,2016-04-14,,,,
@@ -8294,7 +8300,8 @@ azeti,4192,tcp,Azeti Agent Service,[Uwe_Holz],[Uwe_Holz],2009-11-09,,,,,
 azeti-bd,4192,udp,azeti blinddate,[Michael_Werski],[Michael_Werski],2010-02-18,,,,,
 pvxplusio,4193,tcp,PxPlus remote file srvr,[Mike_King],[Mike_King],2009-11-09,,,,,
 ,4193,udp,Reserved,,,,,,,,
-,4194,,Unassigned,,,,,,,,
+spdm,4194,tcp,Security Protocol and Data Model,[Intel_Corporation],[Eduardo_Cabre],2022-01-10,,,,,
+,4194,udp,Reserved,,,,,,,,
 aws-wsp,4195,tcp,AWS protocol for cloud remoting solution,[Amazon.com_Services_LLC],[Lauren_Townsend],2020-04-06,,,,,
 aws-wsp,4195,udp,AWS protocol for cloud remoting solution,[Amazon.com_Services_LLC],[Lauren_Townsend],2020-04-06,,,,,
 aws-wsp,4195,sctp,AWS protocol for cloud remoting solution,[Amazon.com_Services_LLC],[Lauren_Townsend],2020-04-06,,,,,
@@ -8341,7 +8348,9 @@ choiceview-clt,4316,tcp,ChoiceView Client,[Radish_Systems],[Richard_A_Davis],201
 ,4316,udp,Reserved,,,,,,,,
 opentelemetry,4317,tcp,OpenTelemetry Protocol,[OpenTelemetry],[Morgan_McLean],2020-12-09,,,,,
 ,4317,udp,Reserved,,,,,,,,
-,4318-4319,,Unassigned,,,,,,,,
+,4318,,Unassigned,,,,,,,,
+fox-skytale,4319,tcp,Fox SkyTale encrypted communication,[Fox_Crypto_BV],[Frans_van_Dorsselaer],2022-01-20,,,,,
+fox-skytale,4319,udp,Fox SkyTale encrypted communication,[Fox_Crypto_BV],[Frans_van_Dorsselaer],2022-01-20,,,,,
 fdt-rcatp,4320,tcp,FDT Remote Categorization Protocol,[Russell_P_Holsclaw],[Russell_P_Holsclaw],2006-03,,,,,
 fdt-rcatp,4320,udp,FDT Remote Categorization Protocol,[Russell_P_Holsclaw],[Russell_P_Holsclaw],2006-03,,,,,
 rwhois,4321,tcp,Remote Who Is,[Mark_Kosters],[Mark_Kosters],,,[RFC2167],,,
@@ -8351,10 +8360,10 @@ trim-event,4322,udp,TRIM Event Service,,,,,,,,
 trim-ice,4323,tcp,TRIM ICE Service,[Siva_Poobalasingam_2],[Siva_Poobalasingam_2],2007-02,,,,,
 trim-ice,4323,udp,TRIM ICE Service,[Siva_Poobalasingam_2],[Siva_Poobalasingam_2],2007-02,,,,,
 ,4324,,Reserved,,,,2015-05-12,,,,This entry is being removed on 2015-05-12.
-geognosisman,4325,tcp,Cadcorp GeognoSIS Manager Service,,,,,,,,
-geognosisman,4325,udp,Cadcorp GeognoSIS Manager Service,,,,,,,,
-geognosis,4326,tcp,Cadcorp GeognoSIS Service,[Martin_Daly],[Martin_Daly],2006-11,,,,,
-geognosis,4326,udp,Cadcorp GeognoSIS Service,[Martin_Daly],[Martin_Daly],2006-11,,,,,
+geognosisadmin,4325,tcp,Cadcorp GeognoSIS Administrator,[Computer_Aided_Development_Corporation_Ltd],[Martin_Daly],,2022-08-12,,,,
+geognosisman,4325,udp,Cadcorp GeognoSIS Administrator,[Computer_Aided_Development_Corporation_Ltd],[Martin_Daly],,2022-08-12,,,,
+geognosis,4326,tcp,Cadcorp GeognoSIS,[Martin_Daly],[Martin_Daly],2006-11,2022-08-12,,,,
+geognosis,4326,udp,Cadcorp GeognoSIS,[Martin_Daly],[Martin_Daly],2006-11,2022-08-12,,,,
 jaxer-web,4327,tcp,Jaxer Web Protocol,[Uri_Sarid],[Uri_Sarid],2008-01-07,,,,,
 jaxer-web,4327,udp,Jaxer Web Protocol,[Uri_Sarid],[Uri_Sarid],2008-01-07,,,,,
 jaxer-manager,4328,tcp,Jaxer Manager Command Protocol,[Uri_Sarid],[Uri_Sarid],2008-01-22,,,,,
@@ -8380,9 +8389,9 @@ restconf-ch-tls,4336,tcp,RESTCONF Call Home (TLS),[IESG],[IETF_Chair],2016-01-12
 gaia,4340,tcp,Gaia Connector Protocol,[Philippe_Detournay],[Philippe_Detournay],2007-11-12,,,,,
 gaia,4340,udp,Gaia Connector Protocol,[Philippe_Detournay],[Philippe_Detournay],2007-11-12,,,,,
 ,4341,tcp,Reserved,,,2007-11-12,2018-11-30,,,,
-lisp-data,4341,udp,LISP Data Packets,[IESG],[IETF_Chair],2007-11-12,2021-02-17,[RFC-ietf-lisp-rfc6830bis-36],,,
+lisp-data,4341,udp,LISP Data Packets,[IESG],[IETF_Chair],2007-11-12,2021-02-17,[RFC9300],,,
 ,4342,tcp,Reserved,,,,2018-11-30,,,,
-lisp-control,4342,udp,LISP Control Packets,[IETF],[IESG],2007-05,2021-02-25,[RFC-ietf-lisp-rfc6833bis-30],,,
+lisp-control,4342,udp,LISP Control Packets,[IETF],[IESG],2007-05,2021-02-25,[RFC9301],,,
 unicall,4343,tcp,UNICALL,[James_Powell_2],[James_Powell_2],,,,,,
 unicall,4343,udp,UNICALL,[James_Powell_2],[James_Powell_2],,,,,,
 vinainstall,4344,tcp,VinaInstall,[Jay_Slupesky],[Jay_Slupesky],,,,,,
@@ -8599,7 +8608,7 @@ prex-tcp,4487,tcp,Protocol for Remote Execution over TCP,[Daniel_Ruppert],[Danie
 awacs-ice,4488,tcp,Apple Wide Area Connectivity Service ICE Bootstrap,[Rory_McGuire],[Rory_McGuire],2010-09-24,,,,,
 awacs-ice,4488,udp,Apple Wide Area Connectivity Service ICE Bootstrap,[Rory_McGuire],[Rory_McGuire],2010-09-24,,,,,
 ,4489-4499,,Unassigned,,,,,,,Known UNAUTHORIZED USE: Ports 4490 and 4491,
-ipsec-nat-t,4500,tcp,IPsec NAT-Traversal,,,,2017-06-19,[RFC8229],,,
+ipsec-nat-t,4500,tcp,IPsec NAT-Traversal,,,,2022-09-15,[RFC9329],,,
 ipsec-nat-t,4500,udp,IPsec NAT-Traversal,,,,2017-07-07,[RFC3948][RFC7296],,,
 ,4501,,Unassigned,[IANA],[IANA],,,,,,De-registered 08 June 2001
 a25-fap-fgw,4502,sctp,A25 (FAP-FGW),[ThreeGPP_2],[Zhiming_Li],2012-01-11,,,,,
@@ -8637,7 +8646,7 @@ msfrs,4554,tcp,MS FRS Replication,[Kev_George],[Kev_George],2006-09,,,,,
 msfrs,4554,udp,MS FRS Replication,[Kev_George],[Kev_George],2006-09,,,,,
 rsip,4555,tcp,RSIP Port,,,,,[RFC3103],,,
 rsip,4555,udp,RSIP Port,,,,,[RFC3103],,,
-dtn-bundle,4556,tcp,DTN Bundle TCP CL Protocol,[IESG],[IETF_Chair],,2021-02-22,[RFC-ietf-dtn-tcpclv4-26],,,
+dtn-bundle,4556,tcp,DTN Bundle TCP CL Protocol,[IESG],[IETF_Chair],,2021-02-22,[RFC9174],,,
 dtn-bundle,4556,udp,DTN Bundle UDP CL Protocol,,,2006-11,2014-02-21,[RFC7122],,,
 dtn-bundle,4556,dccp,DTN Bundle DCCP CL Protocol,,,2013-11-12,2014-02-21,[RFC7122],1685351985,,
 ,4557,tcp,Reserved,,,,,,,,
@@ -8838,7 +8847,7 @@ fmp,4745,tcp,Funambol Mobile Push,[Andrea_Gazzaniga],[Andrea_Gazzaniga],2007-01,
 fmp,4745,udp,Funambol Mobile Push,[Andrea_Gazzaniga],[Andrea_Gazzaniga],2007-01,,,,,
 ,4746,tcp,Reserved,,,,,,,,
 intelliadm-disc,4746,udp,IntelliAdmin Discovery,[IntelliAdmin_LLC],[Steve_Wiseman],2016-11-18,,,,,
-buschtrommel,4747,udp,peer-to-peer file exchange protocol,[None],[Tobias_Sturm],2013-01-14,,,,,
+buschtrommel,4747,udp,peer-to-peer file exchange protocol,[Tobias_Sturm],[Tobias_Sturm],2013-01-14,,,,,
 ,4747,tcp,Reserved,,,,,,,,
 ,4748-4748,,Unassigned,,,,,,,,
 profilemac,4749,tcp,Profile for Mac,[David_Sinclair],[David_Sinclair],2006-05,,,,,
@@ -8879,7 +8888,9 @@ vxlan-gpe,4790,udp,Generic Protocol Extension for Virtual eXtensible Local Area 
 ,4790,tcp,Reserved,,,,,,,,
 roce,4791,udp,IP Routable RocE,[InfiniBand_Trade_Association],[Diego_Crupnicoff],2014-10-17,,,,,
 ,4791,tcp,Reserved,,,,,,,,
-,4792-4799,,Unassigned,,,,,,,,
+unified-bus,4792,tcp,IP Routable Unified Bus,[Huawei],[Wei_Pan],2022-07-08,2023-04-10,,,,
+unified-bus,4792,udp,IP Routable Unified Bus,[Huawei],[Wei_Pan],2022-07-08,2023-04-10,,,,
+,4793-4799,,Unassigned,,,,,,,,
 iims,4800,tcp,Icona Instant Messenging System,,,,,,,,
 iims,4800,udp,Icona Instant Messenging System,,,,,,,,
 iwec,4801,tcp,Icona Web Embedded Chat,,,,,,,,
@@ -8991,7 +9002,7 @@ bones,4914,udp,Bones Remote Control,[Andreas_Foedrowitz],[Andreas_Foedrowitz],20
 frcs,4915,tcp,Fibics Remote Control Service,[Ken_Lagarec],[Ken_Lagarec],2009-04-17,,,,,
 ,4915,udp,Reserved,,,,,,,,
 ,4916-4935,,Unassigned,,,,,,,,
-an-signaling,4936,udp,Signal protocol port for autonomic networking,[Cisco_systems_3],[Toerless_Eckert_2],2014-06-06,,,,,
+an-signaling,4936,udp,Signal protocol port for autonomic networking,[Cisco_Systems_3],[Toerless_Eckert_2],2014-06-06,,,,,
 ,4936,tcp,Reserved,,,,,,,,
 ,4937,tcp,Reserved,,,,,,,,
 atsc-mh-ssc,4937,udp,ATSC-M/H Service Signaling Channel,[Jerry_Whitaker],[Jerry_Whitaker],2008-10-27,,,,,
@@ -9099,8 +9110,8 @@ qvr,5028,tcp,Quiqum Virtual Relais,[Philipp_Marcel_Albre],[Philipp_Marcel_Albre]
 ,5028,udp,Reserved,,,,,,,,
 infobright,5029,tcp,Infobright Database Server,[Mark_Windrim],[Mark_Windrim],2009-07-23,,,,,
 infobright,5029,udp,Infobright Database Server,[Mark_Windrim],[Mark_Windrim],2009-07-23,,,,,
-surfpass,5030,tcp,SurfPass,[Olivier_Guezenec],[Olivier_Guezenec],2006-12,,,,,
-surfpass,5030,udp,SurfPass,[Olivier_Guezenec],[Olivier_Guezenec],2006-12,,,,,
+,5030,tcp,Reserved,,,2006-12,2022-01-10,,,,Historic usage was surfpass. De-Assigned on 2022-01-10
+,5030,udp,Reserved,,,2006-12,2022-01-10,,,,Historic usage was surfpass. De-Assigned on 2022-01-10
 ,5031,tcp,Reserved,,,,,,,,
 dmp,5031,udp,Direct Message Protocol,[Gjermund_Wallenius],[Gjermund_Wallenius],2009-09-30,,,,,
 signacert-agent,5032,tcp,SignaCert Enterprise Trust Server Agent,[Harris_Corporation],[Daniel_R_Somerfield],2011-08-05,,,,,
@@ -9385,7 +9396,12 @@ padl2sim,5236,tcp,,,,,,,,,
 padl2sim,5236,udp,,,,,,,,,
 mnet-discovery,5237,tcp,m-net discovery,[Andy_Crick],[Andy_Crick],2007-11-13,,,,,
 mnet-discovery,5237,udp,m-net discovery,[Andy_Crick],[Andy_Crick],2007-11-13,,,,,
-,5238-5244,,Unassigned,,,,,,,,
+,5238-5241,,Unassigned,,,,,,,,
+attune,5242,tcp,ATTUne API,[Bellvedi_Ltd],[Sean_D_Sollé_2],2022-06-01,,,,,
+,5242,udp,Reserved,,,,,,,,
+xycstatus,5243,tcp,xyClient Status API and rendevous point,[Xycare_Ltd],[Luke_Bailey],2022-06-06,,,,,
+,5243,udp,Reserved,,,,,,,,
+,5244,,Unassigned,,,,,,,,
 downtools,5245,tcp,DownTools Control Protocol,[Jarrod_Sayers],[Jarrod_Sayers],2009-04-07,,,,,
 downtools-disc,5245,udp,DownTools Discovery Protocol,[Jarrod_Sayers],[Jarrod_Sayers],2009-04-07,,,,,
 ,5246,tcp,Reserved,,,,,,,,
@@ -9731,7 +9747,7 @@ a3-sdunode,5604,udp,A3-SDUNode,[Mike_Dolan],[Mike_Dolan],,,,,,
 a4-sdunode,5605,tcp,A4-SDUNode,[Mike_Dolan],[Mike_Dolan],,,,,,
 a4-sdunode,5605,udp,A4-SDUNode,[Mike_Dolan],[Mike_Dolan],,,,,,
 ,5606-5617,,Unassigned,,,,,,,,
-efr,5618,tcp,Fiscal Registering Protocol,[efsta],[Alois_Reisinger],2013-08-13,,,,,
+efr,5618,tcp,Fiscal Registering Protocol,[efsta_IT_Services_GmbH],[Ernst_Bewersdorff],2013-08-13,2022-02-02,,,,
 ,5618,udp,Reserved,,,,,,,,
 ,5619-5626,,Unassigned,,,,,,,,
 ninaf,5627,tcp,Node Initiated Network Association Forma,[Thomas_Scholl],[Thomas_Scholl],2006-03,,,,,
@@ -9927,10 +9943,13 @@ icmpd,5813,tcp,ICMPD,[Shane_O_Donnell],[Shane_O_Donnell],,,,,,
 icmpd,5813,udp,ICMPD,[Shane_O_Donnell],[Shane_O_Donnell],,,,,,
 spt-automation,5814,tcp,Support Automation,[Joshua_Hawkins],[Joshua_Hawkins],2003-11,,,,,
 spt-automation,5814,udp,Support Automation,[Joshua_Hawkins],[Joshua_Hawkins],2003-11,,,,,
-,5815-5840,,Unassigned,,,,,,,,
+,5815-5819,,Unassigned,,,,,,,,
+autopassdaemon,5820,tcp,AutoPass licensing,[Micro_Focus_2],[AutoPass],2022-06-10,,,,,
+,5820,udp,Reserved,,,,,,,,
+,5821-5840,,Unassigned,,,,,,,,
 shiprush-d-ch,5841,tcp,Z-firm ShipRush interface for web access and bidirectional data,[Z-Firm_LLC],[Rafael_Zimberoff],2014-08-22,,,,,
 ,5841,udp,Reserved,,,,,,,,
-reversion,5842,tcp,Reversion Backup/Restore,[Cameo_Systems_Inc],[Craig_Nelson],2011-09-26,,,,,
+reversion,5842,tcp,Reversion Backup/Restore,[Pincoder_Diagnostics_Inc],[Craig_Nelson],2011-09-26,2022-10-12,,,,
 ,5842,udp,Reserved,,,,,,,,
 ,5843-5858,,Unassigned,,,,,,,,
 wherehoo,5859,tcp,WHEREHOO,[Jim_Youll],[Jim_Youll],,,,,,
@@ -9947,18 +9966,39 @@ jute,5883,tcp,Javascript Unit Test Environment,[Mark_Ethan_Trostler],[Mark_Ethan
 ,5884-5899,,Unassigned,,,,,,,,
 rfb,5900,tcp,Remote Framebuffer,[Tristan_Richardson],[Tristan_Richardson],2006-03,,[RFC6143],,,
 rfb,5900,udp,Remote Framebuffer,[Tristan_Richardson],[Tristan_Richardson],2006-03,,[RFC6143],,,
-,5901-5909,,Unassigned,,,,,,,,
-cm,5910,tcp,Context Management,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
-cm,5910,udp,Context Management,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
+,5901-5902,,Unassigned,,,,,,,,
+ff-ice,5903,tcp,Flight & Flow Info for Collaborative Env,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: FF-ICE
+ff-ice,5903,udp,Flight & Flow Info for Collaborative Env,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: FF-ICE
+ff-ice,5903,sctp,Flight & Flow Info for Collaborative Env,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: FF-ICE
+ag-swim,5904,tcp,Air-Ground SWIM,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AG-SWIM
+ag-swim,5904,udp,Air-Ground SWIM,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AG-SWIM
+ag-swim,5904,sctp,Air-Ground SWIM,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AG-SWIM
+asmgcs,5905,tcp,Adv Surface Mvmnt and Guidance Cont Sys,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: ASMGCS
+asmgcs,5905,udp,Adv Surface Mvmnt and Guidance Cont Sys,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: ASMGCS
+asmgcs,5905,sctp,Adv Surface Mvmnt and Guidance Cont Sys,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: ASMGCS
+rpas-c2,5906,tcp,Remotely Piloted Vehicle C&C,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: RPAS-C2
+rpas-c2,5906,udp,Remotely Piloted Vehicle C&C,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: RPAS-C2
+rpas-c2,5906,sctp,Remotely Piloted Vehicle C&C,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: RPAS-C2
+dsd,5907,tcp,Distress and Safety Data App,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: DSD
+dsd,5907,udp,Distress and Safety Data App,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: DSD
+dsd,5907,sctp,Distress and Safety Data App,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: DSD
+ipsma,5908,tcp,IPS Management Application,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: IPSMA
+ipsma,5908,udp,IPS Management Application,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: IPSMA
+ipsma,5908,sctp,IPS Management Application,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: IPSMA
+agma,5909,tcp,Air-ground media advisory,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AGMA
+agma,5909,udp,Air-ground media advisory,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AGMA
+agma,5909,sctp,Air-ground media advisory,[International_Civil_Aviation_Organisation],[Greg_Saccone],2022-06-03,,,,,Defined TXT keys: AGMA
+ats-atn,5910,tcp,Air Traffic Services applications using ATN,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
+ats-atn,5910,udp,Air Traffic Services applications using ATN,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
 cm,5910,sctp,Context Management,[Justin_Yu],[Justin_Yu],2011-05-19,,,,,
-cpdlc,5911,tcp,Controller Pilot Data Link Communication,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
-cpdlc,5911,udp,Controller Pilot Data Link Communication,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
+ats-acars,5911,tcp,Air Traffic Services applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
+ats-acars,5911,udp,Air Traffic Services applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
 cpdlc,5911,sctp,Controller Pilot Data Link Communication,[Justin_Yu],[Justin_Yu],2011-05-18,,,,,
-fis,5912,tcp,Flight Information Services,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
-fis,5912,udp,Flight Information Services,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
+ais-met,5912,tcp,Aeronautical Information Service/Meteorological applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
+ais-met,5912,udp,Aeronautical Information Service/Meteorological applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
 fis,5912,sctp,Flight Information Services,[Justin_Yu],[Justin_Yu],2011-05-25,,,,,
-ads-c,5913,tcp,Automatic Dependent Surveillance,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
-ads-c,5913,udp,Automatic Dependent Surveillance,[Eivan_Cerasi],[Eivan_Cerasi],2008-10-10,,,,,
+aoc-acars,5913,tcp,Airline operational communications applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
+aoc-acars,5913,udp,Airline operational communications applications using ACARS,[Eivan_Cerasi],[Greg_Saccone],2008-10-10,2022-08-08,,,,
 ads-c,5913,sctp,Automatic Dependent Surveillance,[Justin_Yu],[Justin_Yu],2011-05-25,,,,,
 ,5914-5962,,Unassigned,,,,,,,,
 indy,5963,tcp,Indy Application Server,[Bjorn_Lantz],[Bjorn_Lantz],2004-11,,,,,
@@ -10658,7 +10698,10 @@ acmsoda,6969,udp,acmsoda,[Daniel_Simms],[Daniel_Simms],,,,,,
 conductor,6970,tcp,Conductor test coordination protocol,[George_Neville-Neil],[George_Neville-Neil],2014-09-18,,,,,
 ,6970,udp,Reserved,,,,,,,,
 conductor-mpx,6970,sctp,conductor for multiplex,[George_Neville-Neil],[George_Neville-Neil],2014-07-29,,,,,
-,6971-6996,,Unassigned,,,,,,,,
+,6971-6979,,Unassigned,,,,,,,,
+,6980,tcp,Reserved,,,,,,,,
+qolyester,6980,udp,QoS-extended OLSR protocol,[Green_Communications_SAS],[Ignacy_Gawedzki],2022-05-24,,,,,
+,6981-6996,,Unassigned,,,,,,,,
 MobilitySrv,6997,tcp,Mobility XE Protocol,[Joseph_T_Savarese],[Joseph_T_Savarese],2007-06,,,,,
 MobilitySrv,6997,udp,Mobility XE Protocol,[Joseph_T_Savarese],[Joseph_T_Savarese],2007-06,,,,,
 iatp-highpri,6998,tcp,IATP-highPri,[John_Murphy],[John_Murphy],,,,,,
@@ -10761,7 +10804,10 @@ rothaga,7117,tcp,Encrypted chat and file transfer service,[Arcadian_Computers],[
 ,7118-7120,,Unassigned,,,,,,,,
 virprot-lm,7121,tcp,Virtual Prototypes License Manager,[Victor_Galis],[Victor_Galis],,,,,,
 virprot-lm,7121,udp,Virtual Prototypes License Manager,[Victor_Galis],[Victor_Galis],,,,,,
-,7122-7127,,Unassigned,,,,,,,,
+,7122,,Unassigned,,,,,,,,
+snif,7123,tcp,End-to-end TLS Relay Control Connection,[VESvault_Corp],[Jim_Zubov],2021-12-24,,,,,
+,7123,udp,Reserved,,,,,,,,
+,7124-7127,,Unassigned,,,,,,,,
 scenidm,7128,tcp,intelligent data manager,[Paul_Ignatius],[Paul_Ignatius],2006-03,,,,,
 scenidm,7128,udp,intelligent data manager,[Paul_Ignatius],[Paul_Ignatius],2006-03,,,,,
 scenccs,7129,tcp,Catalog Content Search,[Anil_Sharma],[Anil_Sharma],2006-04,,,,,
@@ -11027,8 +11073,8 @@ imqbrokerd,7676,udp,iMQ Broker Rendezvous,[Joseph_Di_Pol],[Joseph_Di_Pol],2002-0
 sun-user-https,7677,tcp,Sun App Server - HTTPS,[Abhijit_Kumar],[Abhijit_Kumar],2005-11,,,,,
 sun-user-https,7677,udp,Sun App Server - HTTPS,[Abhijit_Kumar],[Abhijit_Kumar],2005-11,,,,,
 ,7678-7679,,Unassigned,,,,,,,,
-pando-pub,7680,tcp,Pando Media Public Distribution,[Laird_Popkin],[Laird_Popkin],2008-02-27,,,,,
-pando-pub,7680,udp,Pando Media Public Distribution,[Laird_Popkin],[Laird_Popkin],2008-02-27,,,,,
+ms-do,7680,tcp,Microsoft Delivery Optimization Peer-to-Peer,[Microsoft_Corporation_6],[Narkis_Engler],2008-02-27,2022-05-03,,,,
+ms-do,7680,udp,Microsoft Delivery Optimization Peer-to-Peer,[Microsoft_Corporation_6],[Narkis_Engler],2008-02-27,2022-05-03,,,,
 ,7681-7682,,Unassigned,,,,,,,,
 dmt,7683,tcp,Cleondris DMT,[Cleondris_GmbH],[Christian_Plattner],2015-03-31,,,,,
 ,7683,udp,Reserved,,,,,,,,
@@ -11038,7 +11084,9 @@ bolt,7687,tcp,Bolt database connection,[Neo_Technology_Inc],[Julian_Simpson],201
 ,7688,,Unassigned,,,,,,,,
 collaber,7689,tcp,Collaber Network Service,[Rajesh_Akkineni],[Rajesh_Akkineni],2007-01,,,,,
 collaber,7689,udp,Collaber Network Service,[Rajesh_Akkineni],[Rajesh_Akkineni],2007-01,,,,,
-,7690-7696,,Unassigned,,,,,,,,
+sovd,7690,tcp,Service-Oriented Vehicle Diagnostics,[ASAM_e_V],[Bernd_Wenzel],2022-07-01,,,,,
+,7690,udp,Reserved,,,,,,,,
+,7691-7696,,Unassigned,,,,,,,,
 klio,7697,tcp,KLIO communications,[Helmut_Giritzer_2],[Helmut_Giritzer_2],2005-08,,,,,
 klio,7697,udp,KLIO communications,[Helmut_Giritzer_2],[Helmut_Giritzer_2],2005-08,,,,,
 ,7698-7699,,Unassigned,,,,,,,,
@@ -11216,7 +11264,7 @@ nvme-disc,8009,tcp,NVMe over Fabrics Discovery Service,[NVM_Express_Inc],[Amber_
 ,8011-8014,,Unassigned,,,,,,,,
 cfg-cloud,8015,tcp,Configuration Cloud Service,[admin_at_cfg_cloud],[Goksel_Darcan],2019-01-09,,,,,
 ,8015,udp,Reserved,,,,,,,,
-ads-s,8016,tcp,Beckhoff Automation Device Specification,[Beckhoff_Automation_GmbH_Co_KG],[Henning_Mersch_2],2019-02-28,,,,,
+ads-s,8016,tcp,Beckhoff Automation Device Specification,[Beckhoff_Automation_GmbH_Co_KG],[Henning_Mersch],2019-02-28,,,,,
 ,8016,udp,Reserved,,,,,,,,
 ,8017,tcp,Reserved,,,,,,,,
 cisco-cloudsec,8017,udp,Cisco Cloudsec Dataplane Port Number,[Cisco_Systems_Inc],[Govind_Sharma],2021-03-18,,,,,
@@ -11431,8 +11479,8 @@ espeasy-p2p,8266,udp,ESPeasy peer-2-peer communication,[ESPeasy],[Gijs_Noorlande
 robot-remote,8270,tcp,Robot Framework Remote Library Interface,[Robot_Framework_Foundation],[Chris_Newman],2017-01-26,,,,,
 ,8270,udp,Reserved,,,,,,,,
 ,8271-8275,,Unassigned,,,,,,,,
-pando-sec,8276,tcp,Pando Media Controlled Distribution,[Laird_Popkin],[Laird_Popkin],2008-02-27,,,,,
-pando-sec,8276,udp,Pando Media Controlled Distribution,[Laird_Popkin],[Laird_Popkin],2008-02-27,,,,,
+ms-mcc,8276,tcp,Microsoft Connected Cache,[Microsoft_Corporation_6],[Narkis_Engler],2008-02-27,2022-05-03,,,,
+ms-mcc,8276,udp,Microsoft Connected Cache,[Microsoft_Corporation_6],[Narkis_Engler],2008-02-27,2022-05-03,,,,
 ,8277-8279,,Unassigned,,,,,,,,
 synapse-nhttp,8280,tcp,Synapse Non Blocking HTTP,[Ruwan_Linton],[Ruwan_Linton],2008-06-05,,,,,
 synapse-nhttp,8280,udp,Synapse Non Blocking HTTP,[Ruwan_Linton],[Ruwan_Linton],2008-06-05,,,,,
@@ -11503,9 +11551,14 @@ espeech,8416,udp,eSpeech Session Protocol,[Scott_Tarone],[Scott_Tarone],2002-11,
 espeech-rtp,8417,tcp,eSpeech RTP Protocol,[Scott_Tarone],[Scott_Tarone],2003-04,,,,,
 espeech-rtp,8417,udp,eSpeech RTP Protocol,[Scott_Tarone],[Scott_Tarone],2003-04,,,,,
 ,8418-8422,,Unassigned,,,,,,,,
-aritts,8423,tcp,Aristech text-to-speech server,[Aristech_GmbH],[Mirko_Hering],2017-03-30,,,,,
+aritts,8423,tcp,Aristech text-to-speech server,[Aristech_GmbH],[Martin_Mende],2017-03-30,2022-02-22,,,,
 ,8423,udp,Reserved,,,,,,,,
-,8424-8441,,Unassigned,,,,,,,,
+,8424-8431,,Unassigned,,,,,,,,
+pgbackrest,8432,tcp,PostgreSQL Backup,[David_Steele],[David_Steele],2022-01-26,,,,,
+,8432,udp,Reserved,,,,,,,,
+,8433,tcp,Reserved,,,,,,,,
+aws-as2,8433,udp,Non Persistent Desktop and Application Streaming,[Amazon.com_Services_LLC],[Ivan_O_Mahony],2022-11-07,,,,,
+,8434-8441,,Unassigned,,,,,,,,
 cybro-a-bus,8442,tcp,CyBro A-bus Protocol,[Damir_Skrjanec],[Damir_Skrjanec],2007-05,,,,,
 cybro-a-bus,8442,udp,CyBro A-bus Protocol,[Damir_Skrjanec],[Damir_Skrjanec],2007-05,,,,,
 pcsync-https,8443,tcp,PCsync HTTPS,,,,,,,,
@@ -11931,7 +11984,9 @@ guibase,9321,udp,guibase,[Yutaka_Ono],[Yutaka_Ono],,,,,,
 ,9322-9338,,Unassigned,,,,,,,,
 gnmi-gnoi,9339,tcp,gRPC Network Mgmt/Operations Interface,[Google_Netops],[gNxi_Maintainers],2019-05-09,,,,,
 ,9339,udp,Reserved,,,,,,,,
-,9340-9342,,Unassigned,,,,,,,,
+gribi,9340,tcp,gRPC Routing Information Base Interface,[Google_Networking],[Rob_Shakir],2022-03-29,,,,,
+,9340,udp,Reserved,,,,,,,,
+,9341-9342,,Unassigned,,,,,,,,
 mpidcmgr,9343,tcp,MpIdcMgr,[Yutaka_Ono],[Yutaka_Ono],,,,,,
 mpidcmgr,9343,udp,MpIdcMgr,[Yutaka_Ono],[Yutaka_Ono],,,,,,
 mphlpdmc,9344,tcp,Mphlpdmc,[Yutaka_Ono],[Yutaka_Ono],,,,,,
@@ -12502,7 +12557,10 @@ warehouse,12322,udp,Warehouse Monitoring Syst,[Craig_Steffen],[Craig_Steffen],20
 ,12323-12344,,Unassigned,,,,,,,,
 italk,12345,tcp,Italk Chat System,[Takayuki_Ito],[Takayuki_Ito],,,,,,
 italk,12345,udp,Italk Chat System,[Takayuki_Ito],[Takayuki_Ito],,,,,,
-,12346-12752,,Unassigned,,,,,,,,
+,12346-12545,,Unassigned,,,,,,,,
+carb-repl-ctrl,12546,tcp,Carbonite Server Replication Control,[Open_Text_Corporation],[Tony_Ponzo],2022-10-07,,,,,
+,12546,udp,Reserved,,,,,,,,
+,12547-12752,,Unassigned,,,,,,,,
 tsaf,12753,tcp,tsaf port,[Andreas_Fehr],[Andreas_Fehr],,,,,,
 tsaf,12753,udp,tsaf port,[Andreas_Fehr],[Andreas_Fehr],,,,,,
 ,12754-12864,,Unassigned,,,,,,,,
@@ -12690,7 +12748,7 @@ axon-tunnel,16665,tcp,Reliable multipath data transport for high latencies,[Brid
 ,16666,tcp,Reserved,,,,,,,,
 vtp,16666,udp,Vidder Tunnel Protocol,[Vidder_Inc],[Ted_Schroeder_2],2011-10-24,,,,,
 ,16667-16788,,Unassigned,,,,,,,,
-cadsisvr,16789,tcp,This server provides callable services to mainframe External Security Managers from any TCP/IP platform,[CA_Technologies],[Thomas_Sakowski],2015-06-02,,,,,
+cadsisvr,16789,tcp,This server provides callable services to mainframe External Security Managers from any TCP/IP platform,[Broadcom],[Thomas_Sakowski],2015-06-02,2023-03-29,,,,
 ,16789,udp,Reserved,,,,,,,,
 ,16790-16899,,Unassigned,,,,,,,,
 newbay-snc-mc,16900,tcp,Newbay Mobile Client Update Service,[Srinivasa_Nayudu],[Srinivasa_Nayudu],2009-07-06,,,,,
@@ -12712,7 +12770,10 @@ amt-redir-tls,16995,udp,Intel(R) AMT Redirection/TLS,[Nimrod_Diamant],[Nimrod_Di
 ,16996-17006,,Unassigned,,,,,,,,
 isode-dua,17007,tcp,,,,,,,,,
 isode-dua,17007,udp,,,,,,,,,
-,17008-17183,,Unassigned,,,,,,,,
+,17008-17009,,Unassigned,,,,,,,,
+ncpu,17010,tcp,Plan 9 cpu port,[Ronald_G_Minnich],[Ronald_G_Minnich],2022-05-13,,,,,Defined TXT keys: u=username; k=keypattern; f=fstabFILE; n=namespace; h=hostkey; r=root
+,17010,udp,Reserved,,,,,,,,
+,17011-17183,,Unassigned,,,,,,,,
 vestasdlp,17184,tcp,Vestas Data Layer Protocol,[Vestas_Wind_Systems],[Teunis_de_Wit],2013-10-30,,,,,
 ,17184,udp,Reserved,,,,,,,,
 soundsvirtual,17185,tcp,Sounds Virtual,[Richard_Snider],[Richard_Snider],,,,,,
@@ -12865,8 +12926,10 @@ iec-104-sec,19998,tcp,IEC 60870-5-104 process control - secure,[Grant_Gilchrist]
 ,19998,udp,Reserved,,,,,,,,
 dnp-sec,19999,tcp,Distributed Network Protocol - Secure,[Grant_Gilchrist],[Grant_Gilchrist],2008-08-04,,,,,
 dnp-sec,19999,udp,Distributed Network Protocol - Secure,[Grant_Gilchrist],[Grant_Gilchrist],2008-08-04,,,,,
+dnp-sec,19999,sctp,Distributed Network Protocol - secured,[DNP_Users_Group],[Andrew_West],2022-12-20,,,,,
 dnp,20000,tcp,DNP,[Michael_Thesing],[Michael_Thesing],,,,,,
 dnp,20000,udp,DNP,[Michael_Thesing],[Michael_Thesing],,,,,,
+dnp,20000,sctp,Distributed Network Protocol,[DNP_Users_Group],[Andrew_West],2022-12-20,,,,,
 microsan,20001,tcp,MicroSAN,[Thomas_E_Ludwig],[Thomas_E_Ludwig],2004-02,,,,,
 microsan,20001,udp,MicroSAN,[Thomas_E_Ludwig],[Thomas_E_Ludwig],2004-02,,,,,
 commtact-http,20002,tcp,Commtact HTTP,[Tomas_Svoboda],[Tomas_Svoboda],2004-12,,,,,
@@ -12949,7 +13012,8 @@ vofr-gateway,21590,udp,VoFR Gateway,[Marty_Borden],[Marty_Borden],,,,,,
 ,21591-21799,,Unassigned,,,,,,,,
 tvpm,21800,tcp,TVNC Pro Multiplexing,[Brian_Blevins],[Brian_Blevins],,,,,,
 tvpm,21800,udp,TVNC Pro Multiplexing,[Brian_Blevins],[Brian_Blevins],,,,,,
-,21801-21844,,Unassigned,,,,,,,,
+sal,21801,tcp,Safe AutoLogon,[WM_Software_Inc.],[WM_Software_Inc.],2022-07-05,2022-07-06,,,,
+,21802-21844,,Unassigned,,,,,,,,
 webphone,21845,tcp,webphone,[Toby_Hosterman],[Toby_Hosterman],,,,,,
 webphone,21845,udp,webphone,[Toby_Hosterman],[Toby_Hosterman],,,,,,
 netspeak-is,21846,tcp,NetSpeak Corp. Directory Services,[Toby_Hosterman],[Toby_Hosterman],,,,,,
@@ -13119,7 +13183,9 @@ proactivate,24678,udp,Turbopower Proactivate,[Ben_Oram],[Ben_Oram],,,,,,
 ,24679,,Unassigned,,,,,,,,
 tcc-http,24680,tcp,TCC User HTTP Service,[Brian_Kennedy],[Brian_Kennedy],2006-08,,,,,
 tcc-http,24680,udp,TCC User HTTP Service,[Brian_Kennedy],[Brian_Kennedy],2006-08,,,,,
-,24681-24753,,Unassigned,,,,,,,,
+,24681-24726,,Unassigned,,,,,,,,
+,24727,,Unassigned,,,,,,,Unauthorized Use Known on port 24727,
+,24728-24753,,Unassigned,,,,,,,,
 cslg,24754,tcp,Citrix StorageLink Gateway,[Mark_Nijmeijer],[Mark_Nijmeijer],2009-04-17,,,,,
 ,24754,udp,Reserved,,,,,,,,
 ,24755-24849,,Unassigned,,,,,,,,
@@ -13549,7 +13615,10 @@ e1-interface,38462,sctp,E1 signalling transport (3GPP),[Huawei_Technologies_Fran
 ,38472,tcp,Reserved,,,,,,,,
 ,38472,udp,Reserved,,,,,,,,
 f1-control,38472,sctp,F1 Control Plane (3GPP),[Luis_Lopes],[Luis_Lopes],2017-06-23,,,,,
-,38473-38799,,Unassigned,,,,,,,,
+,38473-38637,,Unassigned,,,,,,,,
+psqlmws,38638,tcp,Premier SQL Middleware Server,[Brain_Patchwork_DX_LLC],[Ozz_Nixon],2022-02-15,,,,,
+,38638,udp,Reserved,,,,,,,,
+,38639-38799,,Unassigned,,,,,,,,
 sruth,38800,tcp,"Sruth is a service for the distribution of routinely-
       generated but arbitrary files based on a publish/subscribe
       distribution model and implemented using a peer-to-peer transport
@@ -13558,12 +13627,15 @@ sruth,38800,tcp,"Sruth is a service for the distribution of routinely-
 ,38801-38864,,Unassigned,,,,,,,,
 secrmmsafecopya,38865,tcp,Security approval process for use of the secRMM SafeCopy program,[Squadra_Technologies],[Anthony_LaMark],2012-03-14,,,,,
 ,38865,udp,Reserved,,,,,,,,
-,38866-39680,,Unassigned,,,,,,,,
+,38866-39062,,Unassigned,,,,,,,,
+vroa,39063,tcp,Children's hearing test/Telemedicine,[Hearing_Australia],[Dan_Zhou],2021-12-23,,,,,
+,39063,udp,Reserved,,,,,,,,
+,39064-39680,,Unassigned,,,,,,,,
 turbonote-1,39681,tcp,TurboNote Default Port,[Peter_Hyde],[Peter_Hyde],,,,,,
 turbonote-1,39681,udp,TurboNote Default Port,[Peter_Hyde],[Peter_Hyde],,,,,,
 ,39682-39999,,Unassigned,,,,,,,,
-safetynetp,40000,tcp,SafetyNET p,[Roland_Rupp],[Roland_Rupp],2006-11,,,,,
-safetynetp,40000,udp,SafetyNET p,[Roland_Rupp],[Roland_Rupp],2006-11,,,,,
+safetynetp,40000,tcp,SafetyNET p,[Pilz_GmbH_and_Co._KG],[Matthias_Holzaepfel],2006-11,2022-12-15,,,,
+safetynetp,40000,udp,SafetyNET p,[Pilz_GmbH_and_Co._KG],[Matthias_Holzaepfel],2006-11,2022-12-15,,,,
 ,40001-40022,,Unassigned,,,,,,,,
 ,40023,tcp,Reserved,,,,,,,,
 k-patentssensor,40023,udp,K-PatentsSensorInformation,[Vaisala],[Saku_Lahteenmaki],2015-12-02,2021-02-02,,,,
@@ -13605,7 +13677,9 @@ candrp,42509,tcp,CA discovery response,[Jon_Press],[Jon_Press],2005-08,,,,,
 candrp,42509,udp,CA discovery response,[Jon_Press],[Jon_Press],2005-08,,,,,
 caerpc,42510,tcp,CA eTrust RPC,[Jon_Press],[Jon_Press],2005-08,,,,,
 caerpc,42510,udp,CA eTrust RPC,[Jon_Press],[Jon_Press],2005-08,,,,,
-,42511-42999,,Unassigned,,,,,,,,
+,42511-42998,,Unassigned,,,,,,,,
+curiosity,42999,tcp,API endpoint for search application,[Curiosity_GmbH],[Rafael_Fernandes_de_Oliveira],2022-12-09,,,,,
+,42999,udp,Reserved,,,,,,,,
 recvr-rc,43000,tcp,Receiver Remote Control,[Research_Electronics_International],[Ross_Binkley],2012-12-20,,,,,
 recvr-rc-disc,43000,udp,Receiver Remote Control Discovery,[Research_Electronics_International],[Ross_Binkley],2012-12-20,,,,,
 ,43001-43187,,Unassigned,,,,,,,,
@@ -13878,6 +13952,8 @@ acs-ctl-gw,,udp,Access Control Gateway,[Honeywell_Security_Group],[John_Dziadosz
 actionitems,,,ActionItems,[Sailalong_Software],[Sailalong_Software],,,,,,Defined TXT keys: None
 activeraid,,,Active Storage Proprietary Device Management Protocol,[Skip_Levens],[Skip_Levens],,,,,,Defined TXT keys: None
 activeraid-ssl,,,Encrypted transport of Active Storage Proprietary Device Management Protocol,[Skip_Levens],[Skip_Levens],,,,,,Defined TXT keys: None
+adamhall,,tcp,Adam Hall network control and monitoring,[Adam_Hall_Group],[Eric_Sawade],2022-07-15,,,,,Defined TXT keys: None
+adamhall,,udp,Adam Hall network control and monitoring,[Adam_Hall_Group],[Eric_Sawade],2022-07-15,,,,,Defined TXT keys: None
 addressbook,,,Address-O-Matic,[Massimiliano_Ribuoli],[Massimiliano_Ribuoli],,,,,,Defined TXT keys: None
 addressbooksrv,,tcp,Address Book Server used for contacts and calendar synchronisation,[AddressBookServer],[Alexander_Hartner],2011-10-14,,,,,"Defined TXT keys: _suffix, _prefix"
 adnodes,,,"difusi Cloud based plug & play network
@@ -13892,6 +13968,10 @@ aeroflex,,,Aeroflex instrumentation and software,[David_Hagood],[David_Hagood],,
   product_id=<string> (optional) ID of licensed product
   txtvers=""*IDN?=<identifier>"" (optional) as per LXI specification (for not yet LXI compatible instruments)"
 aerohive-proxy,,tcp,Aerohive Proxy Configuration Service,[Aerohive_Networks],[Matthew_Gast],2012-05-31,,,,,"Defined TXT keys: name, port, username"
+affinity-docs0,,tcp,Affinity Designer document sharing,[Serif_Europe_Ltd],[Tom_Lachecki],2023-03-30,,,,,Defined TXT keys: Proprietary
+affinity-docs1,,tcp,Affinity Photo document sharing,[Serif_Europe_Ltd],[Tom_Lachecki],2023-03-30,,,,,Defined TXT keys: Proprietary
+affinity-docs2,,tcp,Affinity Publisher document sharing,[Serif_Europe_Ltd],[Tom_Lachecki],2023-03-30,,,,,Defined TXT keys: Proprietary
+affinity-cntent,,tcp,Affinity content sharing,[Serif_Europe_Ltd],[Tom_Lachecki],2023-03-30,,,,,Defined TXT keys: Proprietary
 airdrop,,tcp,Airdrop,[Apple_Inc],[Marc_Krochmal_2],2012-03-02,,,,,"Defined TXT keys: flags, phash, ehash, cname"
 airmate,,tcp,Airmate interworking protocol,[Myriel_Aviation_-_Airmate],[Daniel_Mavrakis_3],2020-09-21,,,,,Defined TXT keys: proprietary
 airmate,,udp,Airmate interworking protocol,[Myriel_Aviation_-_Airmate],[Daniel_Mavrakis_3],2020-09-21,,,,,Defined TXT keys: proprietary
@@ -13970,6 +14050,9 @@ behnke-station,,tcp,Behnke audio / video intercom systems,[Telefonbau_Behnke_Gmb
 behnke-video,,tcp,Behnke doorphones / video intercoms,[Telefonbau_Behnke_GmbH],[Thomas_Kraemer],2021-03-17,,,,,"Defined TXT keys: mjpg, jpg, auth, camera, macaddress"
 bender,,,Bender Communication Protocol,[Bender_GmbH_Co_KG],[Markus_Kremer],2013-10-15,,,,,Defined TXT keys: product version bus id featuremask
 bfagent,,,BuildForge Agent,[Joe_Senner_2],[Joe_Senner_2],,,,,,Defined TXT keys: None
+bhipc,,tcp,Becker & Hickl Inter Process Communication,[Becker_Hickl_GmbH],[Enzo_Marscheck],2023-02-15,,,,,Defined TXT keys: None
+bhipc,,udp,Becker & Hickl Inter Process Communication,[Becker_Hickl_GmbH],[Enzo_Marscheck],2023-02-15,,,,,Defined TXT keys: None
+bidib,,tcp,Model Railway Control via netBiDiB,[BiDiB_Tools_e.V.],[Andreas_Bergmaier],2022-12-26,,,,,"Defined TXT keys: bidib,node,interface,uid,prod,user - http://bidib.org/transport/bidib_net_e.html"
 bigbangchess,,,Big Bang Chess,[Freeverse_Software],[Freeverse_Software],,,,,,Defined TXT keys: None
 bigbangmancala,,,Big Bang Mancala,[Freeverse_Software],[Freeverse_Software],,,,,,Defined TXT keys: None
 bitflit,,tcp,Data transfer service,[Ramesh_Gupta],[Ramesh_Gupta],2012-02-21,,,,,"Defined TXT keys: provider, vendor, user, host, deploy, prototype, schedule"
@@ -13982,6 +14065,8 @@ bluevertise,,udp,BlueVertise Network Protocol (BNP),[Fabrizio_Guglielmino],[Fabr
 boardplus,,tcp,board plus application transfer protocol,[CX5_SOFTWARE],[Yohei_Yoshihara],2013-02-04,,,,,Defined TXT keys: None
 booked-sync,,tcp,Booked communication protocol - Sharing And Sync Service,[Sören_Havemester],[Sören_Havemester],2013-02-18,,,,,"Defined TXT keys: Edition, Version, Public Shares, Machine ID, Machine Name"
 bookworm,,,Bookworm Client Discovery,[Arne_Dirks],[Arne_Dirks],,,,,,Defined TXT keys: flavors
+bootstrap,,tcp,Bootstrap service discovery,[Pedro_Garcia],[Pedro_Garcia],2023-03-20,,,,,"Defined TXT keys: ""url"": if present, indicates a connection url (i.e. wss://example.com/bootstrap, or https://example.com/bootstrap) to be used by the device for bootstrapping; ""namespace"": identifies the underlying application-level protocol (should be unique for the application protocol, typically a UUID or a URN)"
+bootstrap,,udp,Bootstrap service discovery,[Pedro_Garcia],[Pedro_Garcia],2023-03-20,,,,,"Defined TXT keys: ""url"": if present, indicates a connection url (i.e. wss://example.com/bootstrap, or https://example.com/bootstrap) to be used by the device for bootstrapping; ""namespace"": identifies the underlying application-level protocol (should be unique for the application protocol, typically a UUID or a URN)"
 boundaryscan,,udp,Proprietary,[Uwe_Ziegler],[Uwe_Ziegler],,,,,,"Defined TXT keys: blocked=<name of the device>, version=<firmware/instrument controller version>"
 bousg,,,Bag Of Unusual Strategy Games,,,,,,,,Defined TXT keys: None
 boutfitness,,tcp,Bout Fitness Synchronization Service,[Bout_Fitness_LLC],[Jesse_Curry],2014-06-16,,,,,Defined TXT keys: None
@@ -14026,12 +14111,13 @@ commfort,,tcp,A client-server chat for LAN or Internet with video chat support,[
 com-ocs-es-mcc,,,ElectraStar media centre control protocol,[OC],[OC],,,,,,Defined TXT keys: None
 conecube,,udp,DNS SRV service for smarthome server,[cone_smart_solution],[Christoph_Bimminger],2019-04-22,,,,,Defined TXT keys: none
 contactserver,,,Now Contact,,,,,,,,Defined TXT keys: None
+controllerplus,,tcp,game controller forwarding protocol,[Apps_From_Outer_Space_LLC],[John_Haney],2022-07-05,,,,,Defined TXT keys: None
 convert,,tcp,0-RTT TCP Convert Protocol,[IESG],[IETF_Chair],2020-03-27,,[RFC8803],,,Defined TXT keys: None
 coolanetaudio,,tcp,Coolatoola Network Audio,[Coolatoola.com],[Tim_Hewett],2014-01-03,,,,,Defined TXT keys: None
-core-rd,,tcp,Resource Directory accessed using CoAP over TCP,[IESG],[IETF_Chair],2021-03-16,,[RFC-ietf-core-resource-directory-28],,,Defined TXT keys: None
-core-rd,,udp,Resource Directory accessed using CoAP,[IESG],[IETF_Chair],2021-03-16,,[RFC-ietf-core-resource-directory-28],,,Defined TXT keys: None
-core-rd-dtls,,tcp,Resource Directory accessed using CoAP over TLS,[IESG],[IETF_Chair],2021-03-16,,[RFC-ietf-core-resource-directory-28],,,Defined TXT keys: None
-core-rd-dtls,,udp,Resource Directory accessed using CoAP over DTLS,[IESG],[IETF_Chair],2021-03-16,,[RFC-ietf-core-resource-directory-28],,,Defined TXT keys: None
+core-rd,,tcp,Resource Directory accessed using CoAP over TCP,[IESG],[IETF_Chair],2021-03-16,,[RFC9176],,,Defined TXT keys: None
+core-rd,,udp,Resource Directory accessed using CoAP,[IESG],[IETF_Chair],2021-03-16,,[RFC9176],,,Defined TXT keys: None
+core-rd-tls,,tcp,Resource Directory accessed using CoAP over TLS,[IESG],[IETF_Chair],2021-03-16,2022-04-14,[RFC9176],,,Defined TXT keys: None
+core-rd-dtls,,udp,Resource Directory accessed using CoAP over DTLS,[IESG],[IETF_Chair],2021-03-16,,[RFC9176],,,Defined TXT keys: None
 corroboree,,,Corroboree Server,[Heath_Raftery],[Heath_Raftery],,,,,,Defined TXT keys: None
 coviot,,tcp,Service for coviot branded devices,[Coviot],[Adnan_Senyurt],2017-05-19,,,,,"Defined TXT keys: FW_VERSION, PROTOCOL_VERSION, SERVICE_DESCRIPTION"
 coviot,,udp,Service for coviot branded devices,[Coviot],[Adnan_Senyurt],2017-05-19,,,,,"Defined TXT keys: FW_VERSION, PROTOCOL_VERSION, SERVICE_DESCRIPTION"
@@ -14138,7 +14224,8 @@ enphase-envoy,,tcp,Enphase Energy Envoy,[Enphase_Energy_Inc],[Chris_Eich],2011-1
       - serialnum"
 ep,,,Endpoint Protocol (EP) for use in Home Automation systems,[Tommy_van_der_Vorst],[Tommy_van_der_Vorst],,,,,,Defined TXT keys: dns-sd_mdns
 esp,,tcp,Extensis Server Protocol,[Loren_Barr],[Loren_Barr],2006-12,,,,,Defined TXT keys: none
-est,,tcp,Enrollment Over Secure Transport,[Jack_Visoky],[Jack_Visoky],2017-10-06,,,,,[RFC7030]. Defined TXT keys: none
+est,,tcp,Enrollment Over Secure Transport,[Jack_Visoky],[Jack_Visoky],2017-10-06,,,,,[RFC7030]. Defined TXT keys: None
+est-coaps,,udp,EST over secure CoAP (EST-coaps),[Toerless_Eckert_3],[Toerless_Eckert_3],2022-05-03,2022-05-04,,,,[RFC9148]. Defined TXT keys: None
 eucalyptus,,,Eucalyptus Discovery,[Support_Team],[Support_Team],,,,,,Defined TXT keys: Eucalyptus-DNS-SD
 eventserver,,,Now Up-to-Date,,,,,,,,Defined TXT keys: None
 evp,,tcp,EvP - Generic EVENT protocol,[Quentin_Glidic],,2013-06-05,,,,,Defined TXT keys: None
@@ -14303,6 +14390,8 @@ inova-ontrack,,,Inova Solutions OnTrack Display Protocol,,,,,,,,Defined TXT keys
 iot,,tcp,Internet-of-things (IoT) JSON telegram service,[SEVENSTAX_GmbH],[Ralf_Schwarzer],2015-11-05,,,,,Defined TXT keys: <type>:application specific kind of protocol; <vers>:version of the 'type'; <device>:device descriptor
 iota,,tcp,iotaMed medical records server,[MITM],[Martin_Wehlou],2011-10-18,,,,,Defined TXT keys: none
 ipbroadcaster,,,IP Broadcaster,[base_t_Interactive],[base_t_Interactive],,,,,,Defined TXT keys: None
+iperfd,,tcp,Network socket performance test,[Robert_McMahon],[Robert_McMahon],2022-09-02,,,,,Defined TXT keys: None
+iperfd,,udp,Network socket performance test,[Robert_McMahon],[Robert_McMahon],2022-09-02,,,,,Defined TXT keys: None
 ipspeaker,,,IP Speaker Control Protocol,[Dan_Mahn],[Dan_Mahn],,,,,,Defined TXT keys: None
 iqp,,tcp,Control protocol for Phase One devices,[Phase_One],[Christopher_Jacobsen],2018-01-16,,,,,"Defined TXT keys: txtvers,mk,md,us,un,ss,auth"
 irc-iot,,tcp,The universal protocol for building IoT,[Alexey_Y_Woronov],[Alexey_Y_Woronov],2019-12-20,,,,,Defined TXT keys: _irc-iot
@@ -14348,6 +14437,7 @@ jukejoint,,tcp,Music sharing protocol,[Phrenetic_Apps_LLC],[Christopher_Pow],201
 keynoteaccess,,tcp,KeynoteAccess is used for sending remote requests/responses when controlling a slideshow with Keynote Remote,[Apple],[Brad_Vaughan],2011-10-12,,,,,Defined TXT keys: None
 keynotepairing,,tcp,KeynotePairing is used to pair Keynote Remote with Keynote,[Apple],[Brad_Vaughan],2011-10-12,,,,,Defined TXT keys: None
 kiwin,,tcp,Topology Discovery,[Stephen_kiwin_PALM],[Stephen_kiwin_PALM],2015-06-30,,,,,"Defined TXT keys: kiwin, top"
+knx,,udp,Discovery in KNX IoT Point API,[KNX_Association],[Joost_Demarest],2022-10-21,,,,,Defined TXT keys: None
 ktp,,,Kabira Transaction Platform,[Ramiro_Sarmiento],[Ramiro_Sarmiento],,,,,,Defined TXT keys: None
 kyma,,tcp,Symbolic Sound Kyma Service Discovery,[Symbolic_Sound_Corporation],[Kurt_Hebel],2018-11-28,,,,,Defined TXT keys: None
 la-maint,,,IMP Logical Address Maintenance,,,,2013-05-24,,,,This service name is no longer in use.
@@ -14466,6 +14556,8 @@ ncbroadcast,,,Network Clipboard Broadcasts,[Thom_McGrath],[Thom_McGrath],,,,,,De
 ncdirect,,,Network Clipboard Direct Transfers,[Thom_McGrath],[Thom_McGrath],,,,,,Defined TXT keys: Contact The ZAZ Software <networkclipboard at thezaz.com>
 ncount-issuer,,tcp,The issuer service in the n-Count electronic value transfer system,[n-Count_Technology_BV],[Eduard_de_Jong],2013-01-22,,,,,Defined TXT keys: None
 ncsyncserver,,,Network Clipboard Sync Server,[Thom_McGrath],[Thom_McGrath],,,,,,Defined TXT keys: Contact The ZAZ Software <networkclipboard at thezaz.com>
+ndi,,tcp,IP based video discovery and usage,[NewTek_Inc],[Brad_McFarland],2022-11-22,,,,,Defined TXT keys: Proprietary
+ndi,,udp,IP based video discovery and usage,[NewTek_Inc],[Brad_McFarland],2022-11-22,,,,,Defined TXT keys: Proprietary
 nedap-aepu,,tcp,Nedap AEOS processing unit,[Nedap],[Leon_van_der_Voort_van_der_Kleij],2014-08-28,,,,,Defined TXT keys: None
 neoriders,,udp,NeoRiders Client Discovery Protocol,[Jesse_W_Towner],[Jesse_W_Towner],,,,,,Defined TXT keys: None
 netready,,tcp,UpdateLogic NetReady Device Identification,[UpdateLogic_Inc],[Chris_Nigbur],2014-10-27,,,,,Defined TXT keys: Proprietary
@@ -14483,6 +14575,7 @@ ni-mail,,udp,NI MAIL,[Steve_Kille],[Steve_Kille],2017-05-18,,,,,Defined TXT keys
 ni-rt,,tcp,National Instruments Real-Time Target,[National_Instruments],[Joshua_Prewitt],2011-10-24,,,,,"Defined TXT keys: MAC, OS, OSVer, ProcArch"
 ni-sysapi,,tcp,National Instruments System API Service,[National_Instruments],[Joshua_Prewitt],2011-10-24,,,,,"Defined TXT keys: MAC, Experts, Version"
 nodel,,tcp,Lightweight event based control protocol utilising JavaScript Object Notation,[Lumicom],[Michael_Cartmel],2013-02-07,,,,,Defined TXT keys: None
+nq,,tcp,Network Quality test server endpoint,[Stuart_Cheshire],[Stuart_Cheshire],2022-07-11,,,,,Defined TXT keys: None
 ntlx-arch,,,American Dynamics Intellex Archive Management Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial"
 ntlx-ent,,,American Dynamics Intellex Enterprise Management Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial"
 ntlx-video,,,American Dynamics Intellex Video Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial, control, event"
@@ -14535,6 +14628,8 @@ panoply,,tcp,Panoply multimedia composite transfer protocol,[Natarajan_Balasunda
 parabay-p2p,,tcp,Parabay P2P protocol,[Vishnu_Varadaraj],[Vishnu_Varadaraj],,,,,,Defined TXT keys: None
 parity,,tcp,PA-R-I-Ty (Public Address - Radio - Intercom - Telefony),[ims_Info],[Oskar_Persano],2011-10-20,,,,,Defined TXT keys: Proprietary
 parity,,udp,PA-R-I-Ty (Public Address - Radio - Intercom - Telefony),[ims_Info],[Oskar_Persano],2011-10-20,,,,,Defined TXT keys: Proprietary
+payload-app,,tcp,Local and remote file transfers,[Didrik_Nordström],[Didrik_Nordström],2022-12-02,,,,,"Defined TXT keys: _payload._tcp.local, _payload._udp.local"
+payload-app,,udp,Local and remote file transfers,[Didrik_Nordström],[Didrik_Nordström],2022-12-02,,,,,"Defined TXT keys: _payload._tcp.local, _payload._udp.local"
 pgpkey-hkp,,,Horowitz Key Protocol (HKP),[Marc_Horowitz],[Marc_Horowitz],,,,,,Defined TXT keys: None
 pgpkey-http,,,PGP Keyserver using HTTP/1.1,[Jeroen_Massar_3],[Jeroen_Massar_3],,,,,,"Defined TXT keys: path=<path on the server where the HKP applications reside>
                   normally: ""path=/pks/"""
@@ -14599,6 +14694,7 @@ radiusdtls,,udp,"Authentication, Accounting, and Dynamic Authorization via the R
 radiustls,,tcp,"Authentication, Accounting, and Dynamic Authorization via the RADIUS protocol. This service name is used to construct the SRV service label ""_radiustls"" for discovery of RADIUS/TLS servers.",[IESG],[IETF_Chair],2015-03-23,2015-10-06,[RFC7585],,,Defined TXT keys: None
 railduino,,tcp,Model Railroad Messaging,[Railduino],[Volker_Wiegand_2],2018-01-08,,,,,Defined TXT keys: role=master
 raop,,,Remote Audio Output Protocol (AirTunes),[BonjourDev],[BonjourDev],,2011-10-14,,,,Defined TXT keys: None
+rapta,,tcp,Industrial IOT self-discovery network,[Rapta_Inc],[Matt_Daue],2022-09-22,,,,,Defined TXT keys: version
 rbr,,,RBR Instrument Communication,[Greg_Johnson],[Greg_Johnson],,,,,,Defined TXT keys: None
 rce,,,PowerCard,[DeVoeSquared],[DeVoeSquared],,,,,,Defined TXT keys: None
 rdp,,,Windows Remote Desktop Protocol,[Jugaari],[Jugaari],,,,,,Defined TXT keys: None
@@ -14701,6 +14797,7 @@ slimhttp,,,SliMP3 Server Web Interface,[Dean_Blackketter_2],[Dean_Blackketter_2]
 slpda,,tcp,Remote Service Discovery in the Service Location,,,,,[RFC3832],,,
 slpda,,udp,Remote Service Discovery in the Service Location,,,,,[RFC3832],,,
 smag,,tcp,terminal access to laundry appliances,[Schulthess_Maschinen_AG],[Michael_Schwetz],2018-11-30,,,,,"Defined TXT keys: mName, tName, lName, Type, Timestamp"
+smaho,,tcp,Smart Home Device Setup,[SMAHO],[Max_Köhler],2021-11-15,,,,,"Defined TXT keys: mo, ma, fw, hw, na, id"
 smartenergy,,,Smart Energy Profile,[Robby_Simpson],[Robby_Simpson],,,,,,Defined TXT keys: See http://www.zigbee.org/SmartEnergy
 smartsocket,,tcp,home control,[Robert_Diamond],[Robert_Diamond],2012-07-06,,,,,Defined TXT keys: None
 smb,,,Server Message Block over TCP/IP,,,,,,,,Defined TXT keys: u=<username> p=<password> path=<path>
@@ -14710,6 +14807,9 @@ smsync,,,Syncellence file synchronization protocol,[Dialectro_Software],[Gord_Pe
       protocol=<version number>
       os=<operating system name>
       osver=<operating system version>"
+snif-cln,,tcp,End-to-end TLS Relay Client Connection,[VESvault_Corp],[Jim_Zubov],2021-12-15,,[https://snif.host/relay-proto#snif-cln],,,Defined TXT keys: None
+snif-fifo,,tcp,End-to-end TLS Relay Cluster,[VESvault_Corp],[Jim_Zubov],2021-12-15,,[https://snif.host/relay-proto#snif-fifo],,,Defined TXT keys: None
+snif-srv,,tcp,End-to-end TLS Relay Service Connection,[VESvault_Corp],[Jim_Zubov],2021-12-29,,[https://snif.host/relay-proto#snif-srv],,,Defined TXT keys: None
 soap,,,Simple Object Access Protocol,[Andrew_Donoho],[Andrew_Donoho],,,,,,Defined TXT keys: None
 socketcloud,,,Socketcloud distributed application framework,[Robert_Goodyear],[Robert_Goodyear],,,,,,"Defined TXT keys: system, service, process, context, direction, status, progress, health, directive, flags"
 soda,,tcp,Secure On Device API,[Smith_Micro_Software_Inc],[David_Sperling_2],2011-10-10,,,,,"Defined TXT keys: a. ssid=<Wi-Fi SSID of the device>
@@ -14727,8 +14827,8 @@ spearcat,,,sPearCat Host Discovery,[Pierre_Frisch_2],[Pierre_Frisch_2],,,,,,"Def
 spidap,,tcp,Sierra Photonics Inc. data protocol,[Sierra_Photonics_Inc],[Support_Staff],2011-10-20,,,,,Defined TXT keys: None
 spincrisis,,,Spin Crisis,[Sphera_Software],[Sphera_Software],,,,,,Defined TXT keys: None
 spiderelectron,,tcp,Binary message passing protocol,[Spider_Electron],[Kenny_Millar],2015-02-05,,,,,"Defined TXT keys: VER, STATUS"
-spl-itunes,,,launchTunes,[David_Nanian_2],[David_Nanian_2],,,,,,Defined TXT keys: None
-spr-itunes,,,netTunes,[David_Nanian_2],[David_Nanian_2],,,,,,Defined TXT keys: None
+spl-itunes,,,launchTunes,[David_Nanian],[David_Nanian],,,,,,Defined TXT keys: None
+spr-itunes,,,netTunes,[David_Nanian],[David_Nanian],,,,,,Defined TXT keys: None
 splashsync,,,SplashData Synchronization Service,[Justin_Cepelak],[Justin_Cepelak],,,,,,Defined TXT keys: Proprietary
 split-dns64,,tcp,DNS64 in split configuration,[Kasper_Dupont],[Kasper_Dupont],2021-10-19,,,,,Defined TXT keys: None
 spres,,tcp,SongPresenter,[Tobias_Hoffmann],[Tobias_Hoffmann],2012-10-09,,,,,"Defined TXT keys: version, name"
@@ -14816,6 +14916,7 @@ touch-able,,,iPhone and iPod touch Remote Controllable,[Amandeep_Jawa_3],[Amande
 touch-remote,,,iPhone and iPod touch Remote Pairing,[Amandeep_Jawa_3],[Amandeep_Jawa_3],,,,,,"Defined TXT keys: txtvers, DvNm, Pair, RemV, RemN, DvTy"
 tptx-console,,tcp,Coordination service for client users of the TotalPraisTrax iPad application,[Randy_Davenport],[Chris_Watson],2014-03-04,,,,,Defined TXT keys: None
 transmitr,,tcp,Service discovery and media transfer for peer to peer mobile media transfer app,[Windward_Code_LLC],[Alex_Belliotti],2013-11-27,,,,,Defined TXT keys: None
+trel,,udp,Thread Radio Encapsulation Link,[Thread_Group_Inc],[Tom_Sciorilli],2021-12-10,2022-05-20,,,,"Defined TXT keys: xa, xp"
 tri-vis-client,,,triCerat Simplify Visibility Client,[Christopher_Karper],[Christopher_Karper],,,,,,Defined TXT keys: None
 tri-vis-server,,,triCerat Simplify Visibility Server,[Christopher_Karper],[Christopher_Karper],,,,,,Defined TXT keys: None
 tryst,,,Tryst,[Francisco_Ryan_Tolma],[Francisco_Ryan_Tolma],,,,,,Defined TXT keys: None
@@ -14825,6 +14926,7 @@ ttcheckers,,,Trivial Technology's Checkers,[Nicolas_Payette],[Nicolas_Payette],,
 ttp4daemon,,,TechTool Pro 4 Anti-Piracy Service,[Micromat],[Micromat],,,,,,Defined TXT keys: None
 tunage,,,Tunage Media Control Service,[Matt_Patenaude],[Matt_Patenaude],,,,,,Defined TXT keys: None
 tuneranger,,,TuneRanger,[Acertant],[Acertant],,,,,,Defined TXT keys: None
+tvm,,tcp,Vogel's TV mount control,[Vogels_Products],[Remco_Poelstra],2022-03-29,,,,,"Defined TXT keys: txtvers, model"
 twinlevel,,tcp,detect sanitary product,[Oblamatik_AG],[Simon_Ensslen],2012-09-05,,,,,Defined TXT keys: None
 twosnakes,,tcp,Service to enable multiplayer game called two snakes.,[Narendra_Kumar_Reddy_Thummaluru],[Narendra_Kumar_Reddy_Thummaluru],2016-06-01,,,,,Defined TXT keys: None
 twosnakes,,sctp,Service to enable multiplayer game called two snakes.,[Narendra_Kumar_Reddy_Thummaluru],[Narendra_Kumar_Reddy_Thummaluru],2016-06-01,,,,,Defined TXT keys: None
@@ -14852,6 +14954,8 @@ usp-ctr-ws,,tcp,USP discovery,[Broadband_Forum],[Broadband_Forum],2017-09-28,,[h
 uswi,,,Universal Switching Corporation products,[Roger_Lemberg],[Roger_Lemberg],,,,,,Defined TXT keys: None
 utest,,,uTest,[Gregory_Power],[Gregory_Power],,,,,,Defined TXT keys: None
 uwsgi,,,Unbit Web Server Gateway Interface,[Roberto_De_Ioris],[Roberto_De_Ioris],,,,,,Defined TXT keys: None
+vapix-http,,tcp,Indicator for VAPIX support over HTTP,[Axis_Communications],[Christian_Storm],2023-04-18,,,,,Defined TXT keys: https://help.axis.com/en-us/axis-os#axis-bonjour-implementation
+vapix-https,,tcp,Indicator for VAPIX support over HTTPS,[Axis_Communications],[Christian_Storm],2023-04-18,,,,,Defined TXT keys: https://help.axis.com/en-us/axis-os#axis-bonjour-implementation
 ve-decoder,,,American Dynamics VideoEdge Decoder Control Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial, path, idp"
 ve-encoder,,,American Dynamics VideoEdge Encoder Control Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial, path, idp"
 ve-recorder,,,American Dynamics VideoEdge Recorder Control Service,[Gary_Sands],[Gary_Sands],,,,,,"Defined TXT keys: txtvers, macaddress, protovers, model, serial, path, idp"
@@ -14902,6 +15006,23 @@ wkgrpsvr,,,Workgroup Server Discovery,[Forest_Hill],[Forest_Hill],,,,,,Defined T
 workstation,,,Workgroup Manager,[Kevin_Arnold],[Kevin_Arnold],,,,,,Defined TXT keys: None
 wormhole,,,Roku Cascade Wormhole Protocol,[Don_Woodward],[Don_Woodward],,,,,,Defined TXT keys: txtvers=1
 workgroup,,,Novell collaboration workgroup,[Brady_Anderson],[Brady_Anderson],,,,,,Defined TXT keys: version=? description=?
+wot,,tcp,W3C WoT Thing Description or Directory,[W3C_Web_of_Things_Working_Group],[Kazuyuki_Ashimura],2022-11-22,2022-12-15,,,,"Defined TXT keys:
+      td: Absolute pathname of the Thing Description of the Thing or Thing Description of the Thing
+      Description Directory.
+      type: Type of the Thing Description, i.e. ""Thing"" or ""Directory"". If omitted, the type is assumed
+      to be Thing.
+      scheme: Scheme part of URL. One of the following values can be specified, with the standard
+      registered URI interpretations [RFC7595]: http (HTTP over TCP),https (HTTP over TLS/TCP),
+      coap+tcp (CoAP over TCP), or coaps+tcp (CoAP over TLS/TCP). If omitted, the scheme is
+      assumed to be http."
+wot,,udp,W3C WoT Thing Description or Directory,[W3C_Web_of_Things_Working_Group],[Kazuyuki_Ashimura],2022-11-22,2022-12-15,,,,"Defined TXT keys:
+      td: Absolute pathname of the Thing Description of the Thing or Thing Description of the Thing
+      Description Directory.
+      type: Type of the Thing Description, i.e. ""Thing"" or ""Directory"". If omitted, the type is assumed
+      to be Thing.
+      scheme: Scheme part of URL. One of the following values can be specified, with the standard
+      registered URI interpretations [RFC7595]: coap (CoAP over UDP), coaps CoAP over DTLS/UDP.
+      If omitted, the scheme is assumed to be coap."
 wpl-ers-http,,tcp,World Programming repository server,[World_Programming_Limited],[Thomas_Quarendon],2017-03-17,,,,,Defined TXT keys: None
 wpl-ers-zmq,,tcp,World Programming repository server,[World_Programming_Limited],[Thomas_Quarendon],2017-03-17,,,,,Defined TXT keys: None
 writietalkie,,,Writie Talkie Data Sharing,[Yin_Ki_Lau],[Yin_Ki_Lau],,,,,,Defined TXT keys: None

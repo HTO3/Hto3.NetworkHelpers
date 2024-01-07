@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net461;net47;net48;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net461;net47;net48;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
     <Authors>HTO3</Authors>
     <Description>Network helper methods.</Description>
     <Copyright>MIT</Copyright>
@@ -13,11 +13,12 @@
     <PackageTags>network helpers ip</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.6</Version>
-    <FileVersion>1.0.6.0</FileVersion>
-    <AssemblyVersion>1.0.6.0</AssemblyVersion>
+    <Version>1.0.7</Version>
+    <FileVersion>1.0.7.0</FileVersion>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>nuget-logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -37,7 +38,11 @@
   <ItemGroup>
     <None Include="..\nuget-logo.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

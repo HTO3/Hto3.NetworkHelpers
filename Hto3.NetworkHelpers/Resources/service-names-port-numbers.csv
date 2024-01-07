@@ -685,8 +685,8 @@ bhevent,357,tcp,bhevent,[John_Kelly],[John_Kelly],,,,,,
 bhevent,357,udp,bhevent,[John_Kelly],[John_Kelly],,,,,,
 shrinkwrap,358,tcp,Shrinkwrap,[Bill_Simpson],[Bill_Simpson],,,,,,
 shrinkwrap,358,udp,Shrinkwrap,[Bill_Simpson],[Bill_Simpson],,,,,,
-nsrmp,359,tcp,Network Security Risk Management Protocol,[Eric_Jacksch],[Eric_Jacksch],,,,,,
-nsrmp,359,udp,Network Security Risk Management Protocol,[Eric_Jacksch],[Eric_Jacksch],,,,,,
+,359,tcp,Reserved,,,,2023-11-16,,,,De-Assigned on 2023-11-16.
+,359,udp,Reserved,,,,2023-11-16,,,,De-Assigned on 2023-11-16.
 scoi2odialog,360,tcp,scoi2odialog,[Keith_Petley],[Keith_Petley],,,,,,
 scoi2odialog,360,udp,scoi2odialog,[Keith_Petley],[Keith_Petley],,,,,,
 semantix,361,tcp,Semantix,[Semantix],[Semantix],,,,,,
@@ -773,8 +773,8 @@ kryptolan,398,tcp,Kryptolan,[Peter_de_Laval],[Peter_de_Laval],,,,,,
 kryptolan,398,udp,Kryptolan,[Peter_de_Laval],[Peter_de_Laval],,,,,,
 iso-tsap-c2,399,tcp,ISO Transport Class 2 Non-Control over TCP,[Yanick_Pouffary],[Yanick_Pouffary],,,,,,
 iso-tsap-c2,399,udp,ISO Transport Class 2 Non-Control over UDP,[Yanick_Pouffary],[Yanick_Pouffary],,,,,,
-osb-sd,400,tcp,Oracle Secure Backup,[Joseph_Dziedzic],[Joseph_Dziedzic],2008-06-06,,,,,Formerly was Workstation Solutions
-osb-sd,400,udp,Oracle Secure Backup,[Joseph_Dziedzic],[Joseph_Dziedzic],2008-06-06,,,,,Formerly was Workstation Solutions
+osb-sd,400,tcp,Oracle Secure Backup,[Steven_Wertheimer],[Steven_Wertheimer],2008-06-06,2023-12-27,,,,Formerly was Workstation Solutions
+osb-sd,400,udp,Oracle Secure Backup,[Steven_Wertheimer],[Steven_Wertheimer],2008-06-06,2023-12-27,,,,Formerly was Workstation Solutions
 ups,401,tcp,Uninterruptible Power Supply,[Charles_Bennett],[Charles_Bennett],2008-08-29,,,,,
 ups,401,udp,Uninterruptible Power Supply,[Charles_Bennett],[Charles_Bennett],2008-08-29,,,,,
 genie,402,tcp,Genie Protocol,[Mark_Hankin],[Mark_Hankin],,,,,,
@@ -920,8 +920,8 @@ datasurfsrvsec,462,tcp,DataRampSrvSec,[Diane_Downie],[Diane_Downie],,,,,,
 datasurfsrvsec,462,udp,DataRampSrvSec,[Diane_Downie],[Diane_Downie],,,,,,
 alpes,463,tcp,alpes,[Alain_Durand],[Alain_Durand],,,,,,
 alpes,463,udp,alpes,[Alain_Durand],[Alain_Durand],,,,,,
-kpasswd,464,tcp,kpasswd,[Theodore_Ts_o],[Theodore_Ts_o],,,,,,
-kpasswd,464,udp,kpasswd,[Theodore_Ts_o],[Theodore_Ts_o],,,,,,
+kpasswd,464,tcp,kpasswd,[Greg_Hudson_2],[Greg_Hudson_2],,2023-11-17,,,,
+kpasswd,464,udp,kpasswd,[Greg_Hudson_2],[Greg_Hudson_2],,2023-11-17,,,,
 urd,465,tcp,URL Rendezvous Directory for SSM,[Toerless_Eckert],[Toerless_Eckert],,,,,,
 submissions,465,tcp,Message Submission over TLS protocol,[IESG],[IETF_Chair],2017-12-12,,[RFC8314],,,
 igmpv3lite,465,udp,IGMP over UDP for SSM,[Toerless_Eckert],[Toerless_Eckert],,,,,,
@@ -4479,7 +4479,8 @@ service-ctrl,2367,tcp,Service Control,[Humberto_Sanchez],[Humberto_Sanchez],,,,,
 service-ctrl,2367,udp,Service Control,[Humberto_Sanchez],[Humberto_Sanchez],,,,,,
 opentable,2368,tcp,OpenTable,[Brett_Goldstein],[Brett_Goldstein],,,,,,
 opentable,2368,udp,OpenTable,[Brett_Goldstein],[Brett_Goldstein],,,,,,
-,2369,,Unassigned,,,,,,,,De-registered (28 March 2006)
+bif-p2p,2369,tcp,Blockchain Identifier InFrastructure P2P,[Li_Zhiping],[Zhang_Bo],2023-06-29,,,,,
+bif-p2p,2369,udp,Blockchain Identifier InFrastructure P2P,[Li_Zhiping],[Zhang_Bo],2023-03-06,,,,,
 l3-hbmon,2370,tcp,L3-HBMon,[Dolores_Scott],[Dolores_Scott],,2014-04-09,,,,
 l3-hbmon,2370,udp,L3-HBMon,[Dolores_Scott],[Dolores_Scott],,2014-04-09,,,,
 rda,2371,tcp,Remote Device Access,[Hewlett_Packard_Enterprise_2],[Steve_Roscio][Paul_Vencel],,2018-11-05,,,,
@@ -4543,8 +4544,8 @@ ncl,2397,tcp,NCL,[Robert_Wiebe],[Robert_Wiebe],,,,,,
 ncl,2397,udp,NCL,[Robert_Wiebe],[Robert_Wiebe],,,,,,
 orbiter,2398,tcp,Orbiter,[David_Goldberg],[David_Goldberg],,,,,,
 orbiter,2398,udp,Orbiter,[David_Goldberg],[David_Goldberg],,,,,,
-fmpro-fdal,2399,tcp,"FileMaker, Inc. - Data Access Layer",[Clay_Maeckal],[Clay_Maeckal],,,,,,
-fmpro-fdal,2399,udp,"FileMaker, Inc. - Data Access Layer",[Clay_Maeckal],[Clay_Maeckal],,,,,,
+fmpro-fdal,2399,tcp,"FileMaker, Inc. - Data Access Layer",[Clay_Maeckel],[Clay_Maeckel],,,,,,
+fmpro-fdal,2399,udp,"FileMaker, Inc. - Data Access Layer",[Clay_Maeckel],[Clay_Maeckel],,,,,,
 opequus-server,2400,tcp,OpEquus Server,[Gavin_Hutchinson_2],[Gavin_Hutchinson_2],,,,,,
 opequus-server,2400,udp,OpEquus Server,[Gavin_Hutchinson_2],[Gavin_Hutchinson_2],,,,,,
 cvspserver,2401,tcp,cvspserver,[Jim_Kingdon],[Jim_Kingdon],,,,,,
@@ -6164,8 +6165,8 @@ stvp,3158,tcp,SmashTV Protocol,[Christian_Wolff],[Christian_Wolff],,,,,,
 stvp,3158,udp,SmashTV Protocol,[Christian_Wolff],[Christian_Wolff],,,,,,
 navegaweb-port,3159,tcp,NavegaWeb Tarification,[Miguel_Angel_Fernand],[Miguel_Angel_Fernand],,,,,,
 navegaweb-port,3159,udp,NavegaWeb Tarification,[Miguel_Angel_Fernand],[Miguel_Angel_Fernand],,,,,,
-tip-app-server,3160,tcp,TIP Application Server,[Olivier_Mascia],[Olivier_Mascia],,,,,,
-tip-app-server,3160,udp,TIP Application Server,[Olivier_Mascia],[Olivier_Mascia],,,,,,
+tip-app-server,3160,tcp,TIP Application Server,[Integral_Software],[Olivier_Mascia],,2023-11-07,,,,
+tip-app-server,3160,udp,TIP Application Server,[Integral_Software],[Olivier_Mascia],,2023-11-07,,,,
 doc1lm,3161,tcp,DOC1 License Manager,[Greg_Goodson],[Greg_Goodson],,,,,,
 doc1lm,3161,udp,DOC1 License Manager,[Greg_Goodson],[Greg_Goodson],,,,,,
 sflm,3162,tcp,SFLM,[System_Administrator],[System_Administrator],,,,,,
@@ -6750,8 +6751,8 @@ vat-control,3457,tcp,VAT default control,[Van_Jacobson],[Van_Jacobson],,,,,,
 vat-control,3457,udp,VAT default control,[Van_Jacobson],[Van_Jacobson],,,,,,
 d3winosfi,3458,tcp,D3WinOSFI,[Brad_Hamilton],[Brad_Hamilton],,,,,,
 d3winosfi,3458,udp,D3WinOSFI,[Brad_Hamilton],[Brad_Hamilton],,,,,,
-integral,3459,tcp,TIP Integral,[Olivier_Mascia],[Olivier_Mascia],,,,,,
-integral,3459,udp,TIP Integral,[Olivier_Mascia],[Olivier_Mascia],,,,,,
+integral,3459,tcp,TIP Integral,[Integral_Software],[Olivier_Mascia],,2023-11-07,,,,
+integral,3459,udp,TIP Integral,[Integral_Software],[Olivier_Mascia],,2023-11-07,,,,
 edm-manager,3460,tcp,EDM Manger,,,,,,,,
 edm-manager,3460,udp,EDM Manger,,,,,,,,
 edm-stager,3461,tcp,EDM Stager,,,,,,,,
@@ -9106,7 +9107,7 @@ strexec-d,5026,tcp,Storix I/O daemon (data),[Storix_Inc],[David_Huffman],2005-08
 strexec-d,5026,udp,Storix I/O daemon (data),[Storix_Inc],[David_Huffman],2005-08,,,,,
 strexec-s,5027,tcp,Storix I/O daemon (stat),[Storix_Inc],[David_Huffman],2005-08,,,,,
 strexec-s,5027,udp,Storix I/O daemon (stat),[Storix_Inc],[David_Huffman],2005-08,,,,,
-qvr,5028,tcp,Quiqum Virtual Relais,[Philipp_Marcel_Albre],[Philipp_Marcel_Albre],2009-07-06,,,,,
+qvr,5028,tcp,Quiqum Virtual Relais,[Philipp_Marcel_Albrecht],[Philipp_Marcel_Albrecht],2009-07-06,,,,,
 ,5028,udp,Reserved,,,,,,,,
 infobright,5029,tcp,Infobright Database Server,[Mark_Windrim],[Mark_Windrim],2009-07-23,,,,,
 infobright,5029,udp,Infobright Database Server,[Mark_Windrim],[Mark_Windrim],2009-07-23,,,,,
@@ -9204,10 +9205,10 @@ qcp,5082,tcp,Qpur Communication Protocol,[Joachim_Kluemper],[Joachim_Kluemper],2
 qcp,5082,udp,Qpur Communication Protocol,[Joachim_Kluemper],[Joachim_Kluemper],2008-03-19,,,,,
 qfp,5083,tcp,Qpur File Protocol,[Joachim_Kluemper],[Joachim_Kluemper],2008-03-19,,,,,
 qfp,5083,udp,Qpur File Protocol,[Joachim_Kluemper],[Joachim_Kluemper],2008-03-19,,,,,
-llrp,5084,tcp,EPCglobal Low-Level Reader Protocol,[Margaret_Wasserman][Paul_Dietrich],[Margaret_Wasserman][Paul_Dietrich],2006-11,,,,,Defined TXT keys: None. RFID reader Low Level Reader Protocol
-llrp,5084,udp,EPCglobal Low-Level Reader Protocol,[Margaret_Wasserman][Paul_Dietrich],[Margaret_Wasserman][Paul_Dietrich],2006-11,,,,,Defined TXT keys: None. RFID reader Low Level Reader Protocol
-encrypted-llrp,5085,tcp,EPCglobal Encrypted LLRP,[Margaret_Wasserman],[Margaret_Wasserman],2006-11,,,,,
-encrypted-llrp,5085,udp,EPCglobal Encrypted LLRP,[Margaret_Wasserman],[Margaret_Wasserman],2006-11,,,,,
+llrp,5084,tcp,EPCglobal Low-Level Reader Protocol,[Margaret_Cullen][Paul_Dietrich],[Margaret_Cullen][Paul_Dietrich],2006-11,,,,,Defined TXT keys: None. RFID reader Low Level Reader Protocol
+llrp,5084,udp,EPCglobal Low-Level Reader Protocol,[Margaret_Cullen][Paul_Dietrich],[Margaret_Cullen][Paul_Dietrich],2006-11,,,,,Defined TXT keys: None. RFID reader Low Level Reader Protocol
+encrypted-llrp,5085,tcp,EPCglobal Encrypted LLRP,[Margaret_Cullen],[Margaret_Cullen],2006-11,,,,,
+encrypted-llrp,5085,udp,EPCglobal Encrypted LLRP,[Margaret_Cullen],[Margaret_Cullen],2006-11,,,,,
 aprigo-cs,5086,tcp,Aprigo Collection Service,[Ron_Zalkind],[Ron_Zalkind],2010-05-28,,,,,
 ,5086,udp,Reserved,,,,,,,,
 biotic,5087,tcp,BIOTIC - Binary Internet of Things Interoperable Communication,[Waher_Data_AB],[Peter_Waher],2014-06-16,2015-11-25,,,,
@@ -9678,7 +9679,10 @@ psl-management,5507,tcp,PowerSysLab Electrical Management,[PowerSysLab],[Lucas_L
 ,5508-5539,,Unassigned,,,,,,,,
 matter,5540,tcp,Matter Operational Discovery and Communi,[Connectivity_Standards_Alliance],[Aron_Rosenberg],2021-07-16,,,,,
 matter,5540,udp,Matter Operational Discovery and Communi,[Connectivity_Standards_Alliance],[Aron_Rosenberg],2021-07-16,,,,,
-,5541-5549,,Unassigned,,,,,,,,
+,5541-5542,,Unassigned,,,,,,,,
+qftest-licserve,5543,tcp,QF-Test License Server,[Quality_First_Software_GmbH],[Gregor_Schmid],2024-01-05,,,,,
+,5543,udp,Reserved,,,,,,,,
+,5544-5549,,Unassigned,,,,,,,,
 cbus,5550,tcp,Model Railway control using the CBUS message protocol,[MERG],[Pete_Brownlow],2017-01-03,,,,,
 ,5550,udp,Reserved,,,,,,,,
 ,5551-5552,,Unassigned,,,,,,,,
@@ -10635,8 +10639,8 @@ radg,6789,tcp,GSS-API for the Oracle Remote Administration Daemon,[Oracle_9],[Sh
 ,6789,udp,Reserved,,,2002-08,2016-09-15,,,,
 hnmp,6790,tcp,HNMP,[Jude_George],[Jude_George],,,,,,
 hnmp,6790,udp,HNMP,[Jude_George],[Jude_George],,,,,,
-hnm,6791,tcp,Halcyon Network Manager,[HelpSystems],[Henriët_Wilkinson],2005-05,2021-07-20,,,,
-hnm,6791,udp,Halcyon Network Manager,[HelpSystems],[Henriët_Wilkinson],2005-05,2021-07-20,,,,
+hnm,6791,tcp,Halcyon Network Manager,[Fortra],[Henriët_Wilkinson],2005-05,2023-05-24,,,,
+hnm,6791,udp,Halcyon Network Manager,[Fortra],[Henriët_Wilkinson],2005-05,2023-05-24,,,,
 ,6792-6800,,Unassigned,,,,,,,,
 acnet,6801,tcp,ACNET Control System Protocol,[Fermilab],[Rich_Neswold],2007-02,2017-07-13,,,,
 acnet,6801,udp,ACNET Control System Protocol,[Fermilab],[Rich_Neswold],2007-02,2017-07-13,,,,
@@ -11325,7 +11329,9 @@ senomix08,8059,tcp,Senomix Timesheets Client [1 year assignment],[Charles_O_Dale
 senomix08,8059,udp,Senomix Timesheets Client [1 year assignment],[Charles_O_Dale],[Charles_O_Dale],2006-07,,,,,
 ,8060,tcp,Reserved,,,,,,,,
 aero,8060,udp,Asymmetric Extended Route Optimization (AERO),[IESG],[IETF_Chair],,,[RFC6706],,,
-,8061-8065,,Unassigned,,,,,,,,
+nikatron-dev,8061,tcp,Nikatron Device Protocol,[Nikatron],[Marcel_Uhlir],2023-09-07,,,,,
+,8061,udp,Reserved,,,,,,,,
+,8062-8065,,Unassigned,,,,,,,,
 toad-bi-appsrvr,8066,tcp,Toad BI Application Server,[Quest_Software_2],[Greg_Cottman_3],2013-04-19,,,,,
 ,8066,udp,Reserved,,,,,,,,
 infi-async,8067,tcp,Infinidat async replication,[INFINIDAT],[Eldar_Kleiner],2015-05-01,,,,,
@@ -11337,7 +11343,7 @@ ucs-isc,8070,tcp,Oracle Unified Communication Suite's Indexed Search Converter,[
 gadugadu,8074,tcp,Gadu-Gadu,[Marcin_Gozdalik],[Marcin_Gozdalik],2006-05,,,,,
 gadugadu,8074,udp,Gadu-Gadu,[Marcin_Gozdalik],[Marcin_Gozdalik],2006-05,,,,,
 ,8075-8076,,Unassigned,,,,,,,,
-mles,8077,tcp,Mles is a client-server data distribution protocol targeted to serve as a lightweight and reliable distributed publish/subscribe database service.,[Juhamatti_Kuusisaari],[Juhamatti_Kuusisaari],2017-02-24,,,,,
+,8077,tcp,Reserved,,,,2024-01-05,,,,De-Assigned on 2024-01-05.
 ,8077,udp,Reserved,,,,,,,,
 ,8078-8079,,Unassigned,,,,,,,,
 http-alt,8080,tcp,HTTP Alternate (see port 80),[Stephen_Casner],[Stephen_Casner],,,,,,
@@ -11567,7 +11573,10 @@ pcsync-http,8444,tcp,PCsync HTTP,[Katy_Lynn_McCullough],[Katy_Lynn_McCullough],,
 pcsync-http,8444,udp,PCsync HTTP,[Katy_Lynn_McCullough],[Katy_Lynn_McCullough],,,,,,
 copy,8445,tcp,Port for copy peer sync feature,[Copy],[Jason_Dictos],2012-09-19,,,,,
 copy-disc,8445,udp,Port for copy discovery,[Copy],[Jason_Dictos],2012-09-19,,,,,
-,8446-8449,,Unassigned,,,,,,,,
+,8446-8447,,Unassigned,,,,,,,,
+matrix-fed,8448,tcp,Matrix Federation Protocol,[The_Matrix.org_Foundation_C.I.C.],[Travis_Ralston],2023-08-04,,,,,
+,8448,udp,Reserved,,,,,,,,
+,8449,,Unassigned,,,,,,,,
 npmp,8450,tcp,npmp,[Ian_Chard],[Ian_Chard],,,,,,
 npmp,8450,udp,npmp,[Ian_Chard],[Ian_Chard],,,,,,
 ,8451-8456,,Unassigned,,,,,,,,
@@ -11625,7 +11634,10 @@ monetra,8665,tcp,Monetra,[Main_Street_Softworks],[Brad_House],2013-04-02,,,,,
 ,8665,udp,Reserved,,,,,,,,
 monetra-admin,8666,tcp,Monetra Administrative Access,[Main_Street_Softworks],[Brad_House],2013-04-02,,,,,
 ,8666,udp,Reserved,,,,,,,,
-,8667-8674,,Unassigned,,,,,,,,
+,8667,,Unassigned,,,,,,,,
+spartan,8668,tcp,Spartan management,[Tenebris_Technologies_Inc],[Eric_Jacksch],2023-10-26,,,,,
+,8668,udp,Reserved,,,,,,,,
+,8669-8674,,Unassigned,,,,,,,,
 msi-cps-rm,8675,tcp,Motorola Solutions Customer Programming Software for Radio Management,[Motorola_Solutions_Inc],[Jenish_Amin],2012-03-14,,,,,
 msi-cps-rm-disc,8675,udp,Motorola Solutions Customer Programming Software for Radio Management Discovery,[Motorola_Solutions_Inc],[Jenish_Amin],2012-03-14,,,,,
 ,8676-8685,,Unassigned,,,,,,,,
@@ -12290,7 +12302,7 @@ bctp-server,10107,udp,"VERITAS BCTP, server",[Saugata_Guha],[Saugata_Guha],2004-
 nmea-0183,10110,tcp,NMEA-0183 Navigational Data,[Meindert_Sprang],[Meindert_Sprang],2009-02-18,,,,,
 nmea-0183,10110,udp,NMEA-0183 Navigational Data,[Meindert_Sprang],[Meindert_Sprang],2009-02-18,,,,,
 ,10111,tcp,Reserved,,,,,,,,
-nmea-onenet,10111,udp,NMEA OneNet multicast messaging,[National_Marine_Electronics_Association],[Steve_Spitzer],2011-09-15,,,,,
+nmea-onenet,10111,udp,NMEA OneNet multicast messaging,[National_Marine_Electronics_Association],[Mark_Oslund],2011-09-15,2023-12-27,,,,
 ,10112,,Unassigned,,,,,,,,
 netiq-endpoint,10113,tcp,NetIQ Endpoint,[John_Wood],[John_Wood],,,,,,
 netiq-endpoint,10113,udp,NetIQ Endpoint,[John_Wood],[John_Wood],,,,,,
@@ -12336,7 +12348,7 @@ tile-ml,10261,tcp,Tile remote machine learning,[_1026_Labs],[Rob_Earhart],2016-0
 blocks,10288,tcp,Blocks,[Carl_Malamud],[Carl_Malamud],,,,,,
 blocks,10288,udp,Blocks,[Carl_Malamud],[Carl_Malamud],,,,,,
 ,10289-10320,,Unassigned,,,,,,,,
-cosir,10321,tcp,Computer Op System Information Report,[Kevin_C_Barber],[Kevin_C_Barber],2009-01-13,,,,,
+,10321,tcp,Reserved,,,,2023-12-05,,,,De-Assigned on 2023-12-05.
 ,10321,udp,Reserved,,,,,,,,
 ,10322-10438,,Unassigned,,,,,,,,
 bngsync,10439,udp,BalanceNG session table synchronization protocol,[Inlab_Software_GmbH],[Thomas_G._Obermair],2014-05-02,,,,,
@@ -12617,7 +12629,10 @@ dsmcc-ccp,13822,tcp,DSMCC Channel Change Protocol,[Tim_Addington],[Tim_Addington
 dsmcc-ccp,13822,udp,DSMCC Channel Change Protocol,[Tim_Addington],[Tim_Addington],,,[ISO/IEC 13818-6 MPEG-2 DSM-CC],,,
 bmdss,13823,tcp,Blackmagic Design Streaming Server,[Sam_Vaughan],[Sam_Vaughan],2011-03-01,,,,,
 ,13823,udp,Reserved,,,,,,,,
-,13824-13893,,Unassigned,,,,,,,,
+,13824-13831,,Unassigned,,,,,,,,
+a-trust-rpc,13832,tcp,Certificate Management and Issuing,[A-Trust_GmbH],[Patrick_Hagelkruys],2023-06-05,,,,,
+,13832,udp,Reserved,,,,,,,,
+,13833-13893,,Unassigned,,,,,,,,
 ucontrol,13894,tcp,Ultimate Control communication protocol,[NEGU_Soft],[borja_lopez_urkidi],2012-09-10,,,,,
 ucontrol,13894,udp,Ultimate Control communication protocol,[NEGU_Soft],[borja_lopez_urkidi],2012-09-10,,,,,
 ,13895-13928,,Unassigned,,,,,,,,
@@ -13936,6 +13951,8 @@ wb-mon,,,Wideband Monitoring,,,,,,,,
 xnet,,,Cross Net Debugger,,,,,,,,
 xns-idp,,,Xerox NS IDP,,,,,,,,
 1password,,,1Password Password Manager data sharing and synchronization protocol,[Roustem_Karimov],[Roustem_Karimov],,,,,,Defined TXT keys: None
+7ksonar,,tcp,Teledyne Marine 7k Sonar Protocol,[Teledyne_Marine],[Anders_Brandt_5],2023-10-03,,,,,Defined TXT keys: None
+7ksonar,,udp,Teledyne Marine 7k Sonar Protocol,[Teledyne_Marine],[Anders_Brandt_5],2023-10-03,,,,,Defined TXT keys: None
 a-d-sync,,,Altos Design Synchronization protocol,[David_Lasker],[David_Lasker],,,,,,Defined TXT keys: None
 abi-instrument,,,Applied Biosystems Universal Instrument Framework,[ThermoFisher_Scientific],[Carlo_Quiñónez],,2021-07-27,,,,"Defined TXT keys:   product=<short product name/model>
   description=<readable name>
@@ -14055,6 +14072,8 @@ bhipc,,udp,Becker & Hickl Inter Process Communication,[Becker_Hickl_GmbH],[Enzo_
 bidib,,tcp,Model Railway Control via netBiDiB,[BiDiB_Tools_e.V.],[Andreas_Bergmaier],2022-12-26,,,,,"Defined TXT keys: bidib,node,interface,uid,prod,user - http://bidib.org/transport/bidib_net_e.html"
 bigbangchess,,,Big Bang Chess,[Freeverse_Software],[Freeverse_Software],,,,,,Defined TXT keys: None
 bigbangmancala,,,Big Bang Mancala,[Freeverse_Software],[Freeverse_Software],,,,,,Defined TXT keys: None
+BioSonics,,tcp,BioSonics Echosounders,[BioSonics_Inc.],[Asa_Packer],2023-12-05,,,,,Defined TXT keys: None
+BioSonics,,udp,BioSonics Echosounders,[BioSonics_Inc.],[Asa_Packer],2023-12-05,,,,,Defined TXT keys: None
 bitflit,,tcp,Data transfer service,[Ramesh_Gupta],[Ramesh_Gupta],2012-02-21,,,,,"Defined TXT keys: provider, vendor, user, host, deploy, prototype, schedule"
 bittorrent,,,BitTorrent Zeroconf Peer Discovery Protocol,[Robin_Perkins],[Robin_Perkins],,,,,,Defined TXT keys: None
 blackbook,,,Little Black Book Information Exchange Protocol,[David_HM_Spector][Paul_M_Franceus],[David_HM_Spector][Paul_M_Franceus],,,,,,"Defined TXT keys:   product=<application name>
@@ -14119,6 +14138,7 @@ core-rd,,udp,Resource Directory accessed using CoAP,[IESG],[IETF_Chair],2021-03-
 core-rd-tls,,tcp,Resource Directory accessed using CoAP over TLS,[IESG],[IETF_Chair],2021-03-16,2022-04-14,[RFC9176],,,Defined TXT keys: None
 core-rd-dtls,,udp,Resource Directory accessed using CoAP over DTLS,[IESG],[IETF_Chair],2021-03-16,,[RFC9176],,,Defined TXT keys: None
 corroboree,,,Corroboree Server,[Heath_Raftery],[Heath_Raftery],,,,,,Defined TXT keys: None
+cosir,,tcp,Computer Op System Information Report,[Kevin_C_Barber],[Kevin_C_Barber],2009-01-13,2023-12-05,,,,Defined TXT keys: None
 coviot,,tcp,Service for coviot branded devices,[Coviot],[Adnan_Senyurt],2017-05-19,,,,,"Defined TXT keys: FW_VERSION, PROTOCOL_VERSION, SERVICE_DESCRIPTION"
 coviot,,udp,Service for coviot branded devices,[Coviot],[Adnan_Senyurt],2017-05-19,,,,,"Defined TXT keys: FW_VERSION, PROTOCOL_VERSION, SERVICE_DESCRIPTION"
 cpnotebook2,,,NoteBook 2,[Circus_Ponies_Suppor],[Circus_Ponies_Suppor],,,,,,Defined TXT keys: None
@@ -14437,7 +14457,8 @@ jukejoint,,tcp,Music sharing protocol,[Phrenetic_Apps_LLC],[Christopher_Pow],201
 keynoteaccess,,tcp,KeynoteAccess is used for sending remote requests/responses when controlling a slideshow with Keynote Remote,[Apple],[Brad_Vaughan],2011-10-12,,,,,Defined TXT keys: None
 keynotepairing,,tcp,KeynotePairing is used to pair Keynote Remote with Keynote,[Apple],[Brad_Vaughan],2011-10-12,,,,,Defined TXT keys: None
 kiwin,,tcp,Topology Discovery,[Stephen_kiwin_PALM],[Stephen_kiwin_PALM],2015-06-30,,,,,"Defined TXT keys: kiwin, top"
-knx,,udp,Discovery in KNX IoT Point API,[KNX_Association],[Joost_Demarest],2022-10-21,,,,,Defined TXT keys: None
+knx,,tcp,KNX Discovery Protocol,[KNX_Association_cvba],[Joost_Demarest],2023-08-10,,,,,Defined TXT keys: None
+knx,,udp,Discovery in KNX IoT Point API,[KNX_Association_cvba],[Joost_Demarest],2022-10-21,,,,,Defined TXT keys: None
 ktp,,,Kabira Transaction Platform,[Ramiro_Sarmiento],[Ramiro_Sarmiento],,,,,,Defined TXT keys: None
 kyma,,tcp,Symbolic Sound Kyma Service Discovery,[Symbolic_Sound_Corporation],[Kurt_Hebel],2018-11-28,,,,,Defined TXT keys: None
 la-maint,,,IMP Logical Address Maintenance,,,,2013-05-24,,,,This service name is no longer in use.
@@ -14518,11 +14539,14 @@ mercurydock,,tcp,Mercury Dock Assistant,[Spider_Electronics],[Kenny_Millar],2014
 mesamis,,,Mes Amis,[David_Priest],[David_Priest],,,,,,Defined TXT keys: None
 meshcop,,udp,Thread Mesh Commissioning,[Thread_Group_Inc],[Esko_Dijk],2020-11-20,,,,,"Defined TXT keys: Thread 1.1 Specification, Section 8.4.1.1.2. https://www.threadgroup.org/ThreadSpec"
 mi-raysat,,,Mental Ray for Maya,[Autodesk],[Autodesk],,,,,,Defined TXT keys: None
+microdeep,,tcp,A protocol for controlling a microscope,[Zorth_Sarl],[David_Mendels],2023-08-02,,,,,Defined TXT keys: txtvers version name uuid
+midi2,,udp,MIDI 2.0 Device Discovery,[MIDI_Manufacturers_Association],[Florian_Bomers],2023-11-07,,,,,"Defined TXT keys: EndpointName, ProductInstanceId"
 mieleacs,,tcp,Protocol for connected accessories,[Miele_and_Cie._KG],[Nils_Langhammer],2018-04-20,,,,,Defined TXT keys: txtvers and proprietary keys
 mieleathome,,tcp,Miele@home Protocol,[Miele_and_Cie._KG],[Nils_Langhammer],2014-03-13,,,,,Defined TXT keys: txtvers and proprietary keys
 mieleprof,,tcp,Miele protocol for prof. appliances,[Miele_and_Cie._KG],[Nils_Langhammer],2018-04-20,,,,,Defined TXT keys: txtvers and proprietary keys
 mielesemiprof,,tcp,Miele protocol for semi prof. appliances,[Miele_and_Cie._KG],[Nils_Langhammer],2018-04-20,,,,,Defined TXT keys: txtvers and proprietary keys
 mist,,tcp,"A Medical Interoperability Service Type, used to identify medical devices providing network interfaces.",[Jon_Griffeth],[Jon_Griffeth],2017-01-12,,,,,Defined TXT keys: https://www.praesentia.com/medkit/mist-service-type (dn dt md mf pr sn vn)
+mles,,tcp,Mles is a client-server data distribution protocol targeted to serve as a lightweight and reliable distributed publish/subscribe database service.,[Juhamatti_Kuusisaari],[Juhamatti_Kuusisaari],2017-02-24,2024-01-05,,,,Defined TXT keys: None
 mmm,,tcp,"Provides a client with access to the Mathematical Mesh, a user-focused PKI.",[Phillip_Hallam-Baker],[Phillip_Hallam-Baker],2015-11-18,,,,,Defined TXT keys: None
 mn-passage,,tcp,A Remote Control Application service used to control Computers on a Local Area Network,[Midnight_Oil_Enterprises_LLC],[Dan_Corkill],2013-07-09,,,,,Defined TXT keys: inherited from bonjour/iOS multipeer connectivity
 mn-passage,,udp,A Remote Control Application service used to control Computers on a Local Area Network,[Midnight_Oil_Enterprises_LLC],[Dan_Corkill],2013-07-09,,,,,Defined TXT keys: inherited from bonjour/iOS multipeer connectivity
@@ -14608,9 +14632,9 @@ omadm-bootstrap,,tcp,Open Mobile Alliance (OMA) Device Management (DM) Bootstrap
 omni-bookmark,,,OmniWeb,[The_Omni_Group],[The_Omni_Group],,,,,,Defined TXT keys: None
 omni-live,,,Service for remote control of Omnisphere virtual instrument,[Glenn_Olander_2],[Glenn_Olander_2],,,,,,Defined TXT keys: omni-livetxt.html
 omnistate,,tcp,Resource state update notifications,[The_Omni_Group],[The_Omni_Group],2020-07-10,,,,,Defined TXT keys: Proprietary
-onenet-info,,tcp,OneNet Application Information Service,[National_Marine_Electronics_Association],[Steven_Spitzer],2019-12-09,,,,,"Defined TXT keys: txtvers, protovers, path"
-onenet-pairing,,tcp,OneNet Pairing,[National_Marine_Electronics_Association],[Steven_Spitzer],2019-12-09,,,,,"Defined TXT keys: txtvers, protovers, id, path"
-onenet-pgn,,udp,OneNet PGN Transport Service,[National_Marine_Electronics_Association],[Steven_Spitzer],2019-12-09,,,,,"Defined TXT keys: txtvers, protovers, nmea-name"
+onenet-info,,tcp,OneNet Application Information Service,[National_Marine_Electronics_Association],[Mark_Oslund],2019-12-09,2023-12-27,,,,"Defined TXT keys: txtvers, protovers, path"
+onenet-pairing,,tcp,OneNet Pairing,[National_Marine_Electronics_Association],[Mark_Oslund],2019-12-09,2023-12-27,,,,"Defined TXT keys: txtvers, protovers, id, path"
+onenet-pgn,,udp,OneNet PGN Transport Service,[National_Marine_Electronics_Association],[Mark_Oslund],2019-12-09,2023-12-27,,,,"Defined TXT keys: txtvers, protovers, nmea-name"
 openbase,,,OpenBase SQL,,,,,,,,Defined TXT keys: None
 opencu,,udp,Conferencing Protocol,[Marc_Manthey_2],[Marc_Manthey_2],,,,,,Defined TXT keys: None
 openpath,,tcp,Discovery of OpenPath appliances,[OpenPath_Security_Inc],[John_Hickey],2018-01-11,,,,,Defined TXT keys: Proprietary
@@ -14909,6 +14933,8 @@ tivo-music,,,TiVo Music Protocol,[Developer_Support],[Developer_Support],,,,,,De
 tivo-photos,,,TiVo Photos Protocol,[Developer_Support],[Developer_Support],,,,,,Defined TXT keys: None
 tivo-remote,,,TiVo Remote Protocol,[Developer_Support],[Developer_Support],,,,,,"Defined TXT keys: protocol, path, swversion, platform, TSN"
 tivo-videos,,,TiVo Videos Protocol,[Developer_Support],[Developer_Support],,,,,,"Defined TXT keys: protocol, path, swversion, platform, TSN"
+tmsensor,,tcp,Teledyne Marine Sensor,[Teledyne_Marine],[Anders_Brandt_5],2023-10-03,,,,,Defined TXT keys: None
+tmsensor,,udp,Teledyne Marine Sensor,[Teledyne_Marine],[Anders_Brandt_5],2023-10-03,,,,,Defined TXT keys: None
 todogwa,,,2Do Sync Helper Tool for Mac OS X and PCs,[Fahad_Gilani],[Fahad_Gilani],,,,,,Defined TXT keys: None
 tomboy,,,Tomboy,[Alex_Graveley],[Alex_Graveley],,,,,,Defined TXT keys: None
 toothpicserver,,,ToothPics Dental Office Support Server,[Milton_Pulis],[Milton_Pulis],,,,,,Defined TXT keys: None
@@ -14927,6 +14953,7 @@ ttp4daemon,,,TechTool Pro 4 Anti-Piracy Service,[Micromat],[Micromat],,,,,,Defin
 tunage,,,Tunage Media Control Service,[Matt_Patenaude],[Matt_Patenaude],,,,,,Defined TXT keys: None
 tuneranger,,,TuneRanger,[Acertant],[Acertant],,,,,,Defined TXT keys: None
 tvm,,tcp,Vogel's TV mount control,[Vogels_Products],[Remco_Poelstra],2022-03-29,,,,,"Defined TXT keys: txtvers, model"
+twiline-disc,,tcp,Discovery for Twiline systems,[W._Wahli_AG],[Michael_Voser],2023-12-04,,,,,"Defined TXT keys: txtvers, protovers, caddr, xbusid"
 twinlevel,,tcp,detect sanitary product,[Oblamatik_AG],[Simon_Ensslen],2012-09-05,,,,,Defined TXT keys: None
 twosnakes,,tcp,Service to enable multiplayer game called two snakes.,[Narendra_Kumar_Reddy_Thummaluru],[Narendra_Kumar_Reddy_Thummaluru],2016-06-01,,,,,Defined TXT keys: None
 twosnakes,,sctp,Service to enable multiplayer game called two snakes.,[Narendra_Kumar_Reddy_Thummaluru],[Narendra_Kumar_Reddy_Thummaluru],2016-06-01,,,,,Defined TXT keys: None
